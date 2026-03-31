@@ -714,6 +714,86 @@
     box-shadow: 0 8px 28px rgba(6,199,85,0.5);
   }
 
+  /* ===== TOKUTEN BANNER ===== */
+  .tokuten {
+    background: linear-gradient(135deg, #1A1208 0%, #2a1e08 50%, #1A1208 100%);
+    border-top: 1px solid rgba(201,169,110,0.3);
+    border-bottom: 1px solid rgba(201,169,110,0.3);
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .tokuten-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .tokuten-label {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--black);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    padding: 4px 16px;
+    margin-bottom: 16px;
+  }
+
+  .tokuten-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    color: var(--white);
+    font-weight: 300;
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+
+  .tokuten-title span {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .tokuten-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .tokuten-list li {
+    background: rgba(201,169,110,0.1);
+    border: 1px solid rgba(201,169,110,0.3);
+    color: var(--gold-light);
+    font-size: 13px;
+    padding: 6px 18px;
+    letter-spacing: 0.05em;
+  }
+
+  .tokuten-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 12px;
+  }
+
+  /* ===== MINI CTA ===== */
+  .mini-cta {
+    background: var(--dark3);
+    padding: 48px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(201,169,110,0.1);
+    border-bottom: 1px solid rgba(201,169,110,0.1);
+  }
+
+  .mini-cta-text {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--white);
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
   /* ===== GOLD LINE ===== */
   .gold-line {
     width: 40px;
@@ -782,7 +862,7 @@
         柔道整復師による三位一体のボディメイク
       </p>
       <ul class="hero-points">
-        <li>ダイエットを繰り返しても痩せられない方へ</li>
+        <li>ダイエットを繰り返しても変化が出ない方へ</li>
         <li>体質改善から始める、リバウンドしない身体づくり</li>
         <li>50代でも変われる。子育て後の自分を取り戻す</li>
       </ul>
@@ -804,6 +884,24 @@
   </div>
 </section>
 
+<!-- TOKUTEN BANNER -->
+<div class="tokuten">
+  <div class="tokuten-inner">
+    <span class="tokuten-label">期間限定 特典</span>
+    <h2 class="tokuten-title">初回ご来院の方に<span>3つの無料特典</span>をご用意</h2>
+    <ul class="tokuten-list">
+      <li>✓ 無料カウンセリング（30分）</li>
+      <li>✓ 体質・骨格チェック 無料</li>
+      <li>✓ 耳ツボ体験施術 無料</li>
+    </ul>
+    <a href="https://line.me/R/ti/p/@hzc8572m" class="btn-line" style="font-size:15px;padding:16px 36px;">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.02 2 11c0 2.95 1.45 5.57 3.72 7.33L5 21l2.85-.75C9.08 20.72 10.5 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg>
+      LINEで特典を受け取る
+    </a>
+    <p class="tokuten-note">※ 特典は予告なく終了する場合がございます</p>
+  </div>
+</div>
+
 <!-- PROBLEM -->
 <section class="problem">
   <div class="section-inner">
@@ -812,7 +910,7 @@
     <div class="problem-grid">
       <div class="problem-item">
         <div class="problem-num">01</div>
-        <p class="problem-text">食事制限や運動を頑張っても<strong>なかなか痩せない</strong>、すぐリバウンドしてしまう</p>
+        <p class="problem-text">食事制限や運動を頑張っても<strong>なかなか体型が変わらない</strong>、すぐリバウンドしてしまう</p>
       </div>
       <div class="problem-item">
         <div class="problem-num">02</div>
@@ -829,6 +927,15 @@
     </div>
   </div>
 </section>
+
+<!-- MINI CTA 1 -->
+<div class="mini-cta">
+  <p class="mini-cta-text">そのお悩み、一度ご相談ください。<br>まずは無料カウンセリングから。</p>
+  <a href="https://line.me/R/ti/p/@hzc8572m" class="btn-line" style="font-size:15px;padding:16px 36px;">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.02 2 11c0 2.95 1.45 5.57 3.72 7.33L5 21l2.85-.75C9.08 20.72 10.5 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg>
+    LINEで無料相談する
+  </a>
+</div>
 
 <!-- WHY -->
 <section class="why">
@@ -870,14 +977,14 @@
         <div class="feature-num">I</div>
         <div class="feature-content">
           <h3 class="feature-title"><span>耳ツボ</span>×代謝アップ</h3>
-          <p class="feature-desc">耳には全身のツボが集中しています。食欲を抑制し、代謝を高めるツボを的確に刺激することで、身体が自然と痩せやすい状態に変化していきます。柔道整復師の専門知識と技術による安心の施術です。</p>
+          <p class="feature-desc">耳には全身のツボが集中しています。食欲を抑制し、代謝を高めるツボを的確に刺激することで、身体が自然と体質改善しやすい状態に変化していきます。柔道整復師の専門知識と技術による安心の施術です。</p>
         </div>
       </div>
       <div class="feature-item">
         <div class="feature-num">II</div>
         <div class="feature-content">
           <h3 class="feature-title"><span>骨格矯正</span>×体型改善</h3>
-          <p class="feature-desc">骨盤・背骨・肩甲骨の歪みが代謝低下・むくみ・体型崩れの原因になります。骨格を正しい位置に整えることで、体型が変わるだけでなく、リンパや血液の流れも改善。痩せやすい身体の土台をつくります。</p>
+          <p class="feature-desc">骨盤・背骨・肩甲骨の歪みが代謝低下・むくみ・体型崩れの原因になります。骨格を正しい位置に整えることで、体型が変わるだけでなく、リンパや血液の流れも改善。体質改善の土台をつくります。</p>
         </div>
       </div>
       <div class="feature-item">
@@ -907,7 +1014,7 @@
           <span class="license-badge">骨格矯正</span>
         </div>
         <p class="sensei-text">
-          「本当に痩せたい方に、本物の施術を届けたい」という想いで、耳ツボ・骨格矯正・栄養指導を組み合わせた独自プログラムを開発。単に体重を落とすのではなく、体質から変えることで「リバウンドしない身体」をつくることを大切にしています。<br><br>
+          「本当に体型を変えたい方に、本物の施術を届けたい」という想いで、耳ツボ・骨格矯正・栄養指導を組み合わせた独自プログラムを開発。単に体重を落とすのではなく、体質から変えることで「リバウンドしない身体」をつくることを大切にしています。<br><br>
           朝霞台地域の皆様に寄り添い、一人ひとりに合わせたオーダーメイドの施術を提供しています。
         </p>
       </div>
@@ -924,24 +1031,30 @@
       <div class="voice-item">
         <div class="voice-quote">"</div>
         <p class="voice-text">50代でこんなに変われるとは思っていませんでした。子育てが終わって自分の時間ができ、思い切って来院。骨格から整えてもらって、体型が全然違います。</p>
-        <div class="voice-result">-6.5kg</div>
         <p class="voice-name">50代女性・主婦</p>
       </div>
       <div class="voice-item">
         <div class="voice-quote">"</div>
         <p class="voice-text">今まで色々なダイエットを試してきたけど、体質から変えるという考え方が新鮮でした。無理なく続けられて、3ヶ月で体型が変わりました。</p>
-        <div class="voice-result">-4.2kg</div>
         <p class="voice-name">47歳女性・パート</p>
       </div>
       <div class="voice-item">
         <div class="voice-quote">"</div>
         <p class="voice-text">耳ツボのことは半信半疑でしたが、施術後から食欲のコントロールがしやすくなりました。先生が丁寧に説明してくださるので安心して通えています。</p>
-        <div class="voice-result">-5.8kg</div>
         <p class="voice-name">52歳女性・会社員</p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- MINI CTA 2 -->
+<div class="mini-cta">
+  <p class="mini-cta-text">あなたも体質から変われます。<br>LINEから気軽にご相談ください。</p>
+  <a href="https://line.me/R/ti/p/@hzc8572m" class="btn-line" style="font-size:15px;padding:16px 36px;">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.02 2 11c0 2.95 1.45 5.57 3.72 7.33L5 21l2.85-.75C9.08 20.72 10.5 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg>
+    LINEで無料カウンセリングを予約
+  </a>
+</div>
 
 <!-- FLOW -->
 <section class="flow">
