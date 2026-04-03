@@ -781,6 +781,61 @@
     margin-bottom: 24px;
   }
 
+  /* ===== BENEFITS ===== */
+  .benefits {
+    background: var(--dark);
+    padding: 64px 20px;
+  }
+
+  .benefits-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .benefits-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    text-align: center;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+
+  .benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .benefits-item {
+    background: var(--dark2);
+    border-left: 3px solid var(--gold);
+    padding: 20px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .benefits-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    line-height: 1.5;
+  }
+
+  .benefits-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text);
+  }
+
+  .benefits-text strong {
+    display: block;
+    color: var(--white);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
   /* ===== GOLD LINE ===== */
   .gold-line {
     width: 40px;
@@ -932,6 +987,36 @@
     LINEで無料相談する
   </a>
 </div>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="benefits-inner">
+    <p class="benefits-title">LINEを追加するだけで受け取れる3つの特典</p>
+    <div class="benefits-list">
+      <div class="benefits-item">
+        <span class="benefits-icon">📊</span>
+        <div class="benefits-text">
+          <strong>「あなたの体型が変わらない理由」</strong>
+          3分で分かる体質診断をLINEで無料送付
+        </div>
+      </div>
+      <div class="benefits-item">
+        <span class="benefits-icon">📖</span>
+        <div class="benefits-text">
+          <strong>「50代から体型が変わった方法」</strong>
+          PDF資料を無料プレゼント
+        </div>
+      </div>
+      <div class="benefits-item">
+        <span class="benefits-icon">💬</span>
+        <div class="benefits-text">
+          <strong>AIコーチ「スルルン」に今すぐ無料で相談できる</strong>
+          24時間いつでもLINEで気軽に相談OK
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- WHY -->
 <section class="why">
