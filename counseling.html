@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>無料カウンセリング予約｜スリムビューティ朝霞台</title>
+<meta name="description" content="体質・骨格・栄養を専門家が丁寧に診断。無料カウンセリング受付中。朝霞台駅南口徒歩1分。完全予約制。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:#FFF9F0;
+  color:#1A1510;
+  font-family:'Noto Sans JP',sans-serif;
+  overflow-x:hidden;
+  line-height:1.7;
+}
+img{max-width:100%;height:auto;display:block;}
+
+:root{
+  --pink:#E8527A;
+  --pink-light:#FFE8EE;
+  --orange:#D4380D;
+  --gold:#D4A017;
+  --gold2:#F5C842;
+  --gold-pale:#FEF8E0;
+  --green:#2E9E6B;
+  --bg:#FFF9F0;
+  --white:#FFFFFF;
+  --text:#1A1510;
+  --muted:#666666;
+  --border:#EEE0CC;
+  --r:10px;
+}
+
+.wrap{max-width:520px;margin:0 auto;padding:0 16px;}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.on{opacity:1;transform:translateY(0);}
+
+/* ── TOP STRIP ── */
+.strip{
+  background:var(--orange);color:#fff;
+  text-align:center;padding:9px 16px;
+  font-size:12px;font-weight:700;letter-spacing:.08em;
+}
+
+/* ══════════════════
+   HERO
+══════════════════ */
+.hero{
+  background:linear-gradient(160deg,#FFF5E0 0%,#FFFAF5 55%,#FFF0F5 100%);
+  padding:44px 16px 0;
+  text-align:center;
+  border-bottom:3px solid var(--gold2);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;
+  top:-60px;right:-60px;
+  width:200px;height:200px;border-radius:50%;
+  background:rgba(212,160,23,.07);pointer-events:none;
+}
+
+.hero-badge{
+  display:inline-block;
+  background:#fff;border:2px solid var(--gold2);
+  color:var(--gold);font-size:12px;font-weight:700;
+  padding:6px 18px;border-radius:24px;margin-bottom:18px;
+  box-shadow:0 2px 8px rgba(212,160,23,.15);
+  animation:fadeUp .6s ease both;
+}
+
+.hero-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(22px,6vw,30px);
+  font-weight:800;line-height:1.5;
+  margin-bottom:10px;
+  animation:fadeUp .6s .08s ease both;
+}
+.hero-title em{font-style:normal;color:var(--orange);}
+
+.hero-sub{
+  font-size:13px;color:var(--muted);
+  line-height:1.85;margin-bottom:24px;
+  animation:fadeUp .6s .15s ease both;
+}
+
+/* 院内写真スロット */
+.hero-img-wrap{
+  max-width:400px;margin:0 auto 0;
+  border-radius:12px 12px 0 0;overflow:hidden;
+  box-shadow:0 -4px 20px rgba(0,0,0,.1);
+  animation:fadeUp .6s .2s ease both;
+}
+.hero-img-wrap img{
+  width:100%;height:200px;object-fit:cover;display:block;
+}
+.hero-img-placeholder{
+  width:100%;height:200px;
+  background:linear-gradient(135deg,#FFF1D6,#FFE8EE);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:8px;
+}
+.hero-img-placeholder .ph-icon{font-size:36px;}
+.hero-img-placeholder .ph-text{font-size:12px;color:#854F0B;font-weight:700;}
+.hero-img-placeholder .ph-hint{font-size:10px;color:#B07040;}
+
+/* ══════════════════
+   URGENCY BAR
+══════════════════ */
+.urgency-bar{
+  background:var(--pink);
+  padding:14px 16px;text-align:center;
+}
+.urgency-bar-inner{
+  display:inline-flex;align-items:center;
+  gap:10px;flex-wrap:wrap;justify-content:center;
+}
+.urgency-bar span{
+  color:#fff;font-size:14px;font-weight:700;line-height:1.5;
+}
+.urgency-count{
+  background:#fff;color:var(--pink);
+  font-family:'Shippori Mincho',serif;
+  font-size:22px;font-weight:800;
+  padding:2px 14px;border-radius:6px;
+  display:inline-block;
+}
+
+/* ══════════════════
+   COUNSELING BOX（予約フォーム）
+══════════════════ */
+.counseling-section{
+  padding:48px 16px 40px;
+  background:var(--white);
+}
+.section-eyebrow{
+  display:inline-block;
+  background:var(--pink);color:#fff;
+  font-size:11px;font-weight:700;letter-spacing:.12em;
+  padding:5px 14px;border-radius:20px;margin-bottom:12px;
+}
+.section-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(20px,5.5vw,26px);
+  font-weight:800;line-height:1.5;
+  margin-bottom:6px;
+}
+.section-title em{font-style:normal;color:var(--pink);}
+.section-sub{font-size:13px;color:var(--muted);line-height:1.85;margin-bottom:28px;}
+
+/* 予約方法カード */
+.booking-cards{
+  display:flex;flex-direction:column;gap:14px;
+  margin-bottom:32px;
+}
+.booking-card{
+  background:var(--bg);
+  border-radius:var(--r);
+  border:2px solid var(--border);
+  overflow:hidden;
+  transition:border-color .2s,box-shadow .2s;
+}
+.booking-card:hover{
+  border-color:var(--gold2);
+  box-shadow:0 4px 16px rgba(212,160,23,.15);
+}
+.booking-card-top{height:4px;}
+.booking-card-body{
+  padding:18px 18px 16px;
+  display:flex;align-items:flex-start;gap:14px;
+}
+.booking-icon{
+  width:48px;height:48px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;flex-shrink:0;
+}
+.booking-text h3{font-size:15px;font-weight:700;margin-bottom:4px;}
+.booking-text p{font-size:12px;color:var(--muted);line-height:1.75;}
+.booking-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:calc(100% - 36px);margin:0 18px 16px;
+  padding:14px;border-radius:8px;
+  font-size:14px;font-weight:700;
+  text-decoration:none;letter-spacing:.05em;
+  transition:transform .2s,box-shadow .2s,filter .2s;
+  font-family:'Noto Sans JP',sans-serif;
+  border:none;cursor:pointer;
+}
+.booking-btn:hover{transform:translateY(-2px);}
+
+/* ── TEL CTA ── */
+.tel-section{
+  background:var(--gold-pale);
+  border:2px solid var(--gold2);
+  border-radius:var(--r);
+  padding:22px 20px;
+  text-align:center;
+  margin-bottom:14px;
+}
+.tel-label{font-size:12px;color:#854F0B;margin-bottom:6px;font-weight:700;}
+.tel-num{
+  font-family:'Shippori Mincho',serif;
+  font-size:30px;font-weight:800;
+  color:var(--text);letter-spacing:.05em;
+  text-decoration:none;display:block;margin-bottom:4px;
+}
+.tel-hours{font-size:11px;color:var(--muted);}
+
+/* ══════════════════
+   WHAT（カウンセリングでできること）
+══════════════════ */
+.what-section{
+  padding:48px 16px;
+  background:var(--bg);
+}
+.what-cards{
+  display:flex;flex-direction:column;gap:12px;
+  margin-top:28px;
+}
+.what-card{
+  background:var(--white);border-radius:var(--r);
+  border:1.5px solid var(--border);
+  padding:16px 18px;
+  display:flex;gap:14px;align-items:flex-start;
+}
+.what-num{
+  font-family:'Shippori Mincho',serif;
+  font-size:26px;font-weight:800;
+  color:rgba(212,160,23,.25);
+  flex-shrink:0;line-height:1;width:28px;
+}
+.what-body h3{font-size:14px;font-weight:700;margin-bottom:4px;color:var(--orange);}
+.what-body p{font-size:12px;color:var(--muted);line-height:1.8;}
+
+/* ══════════════════
+   FLOW（当日の流れ）
+══════════════════ */
+.flow-section{
+  padding:48px 16px;
+  background:var(--white);
+}
+.flow-steps{
+  margin-top:28px;
+  display:flex;flex-direction:column;gap:0;
+}
+.flow-step{
+  display:flex;gap:14px;
+  padding-bottom:24px;position:relative;
+}
+.flow-step:last-child{padding-bottom:0;}
+.flow-step:not(:last-child)::after{
+  content:'';position:absolute;
+  left:18px;top:40px;width:2px;bottom:0;
+  background:repeating-linear-gradient(
+    to bottom,var(--gold2) 0,var(--gold2) 5px,transparent 5px,transparent 10px
+  );
+}
+.flow-circle{
+  width:38px;height:38px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;color:#fff;
+  flex-shrink:0;z-index:1;
+}
+.flow-content{padding-top:6px;}
+.flow-content h3{font-size:14px;font-weight:700;margin-bottom:3px;}
+.flow-content p{font-size:12px;color:var(--muted);line-height:1.75;}
+.flow-time{
+  display:inline-block;
+  font-size:10px;color:var(--muted);
+  background:var(--bg);border:1px solid var(--border);
+  padding:2px 10px;border-radius:20px;margin-top:5px;
+}
+
+/* ══════════════════
+   VOICE（体験談）
+══════════════════ */
+.voice-section{
+  padding:48px 16px;background:var(--bg);
+}
+.voice-cards{
+  display:flex;flex-direction:column;gap:14px;margin-top:28px;
+}
+.voice-card{
+  background:var(--white);border-radius:var(--r);
+  border:1.5px solid var(--border);
+  padding:18px 18px 16px;
+  position:relative;
+}
+.voice-card::before{
+  content:'❝';position:absolute;
+  top:10px;left:14px;
+  font-size:32px;color:var(--border);line-height:1;
+}
+.voice-text{
+  font-size:13px;line-height:1.85;
+  padding-left:22px;padding-top:6px;
+  font-style:italic;color:var(--text);
+  margin-bottom:10px;
+}
+.voice-footer{
+  display:flex;align-items:center;gap:10px;
+  padding-top:10px;border-top:1px solid var(--border);
+}
+.voice-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--gold-pale);border:1.5px solid var(--gold2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;color:var(--gold);
+  flex-shrink:0;
+}
+.voice-info{flex:1;}
+.voice-name{font-size:12px;font-weight:700;}
+.voice-age{font-size:11px;color:var(--muted);}
+.voice-tag{
+  font-size:10px;font-weight:700;
+  padding:3px 10px;border-radius:20px;
+  background:var(--pink-light);color:var(--pink);
+  border:1px solid rgba(232,82,122,.2);
+  flex-shrink:0;
+}
+.voice-note{
+  text-align:center;margin-top:14px;
+  font-size:10px;color:#ccc;line-height:1.9;
+}
+
+/* ══════════════════
+   FAQ
+══════════════════ */
+.faq-section{
+  padding:48px 16px;background:var(--white);
+}
+.faq-list{
+  display:flex;flex-direction:column;gap:10px;margin-top:28px;
+}
+.faq-item{
+  background:var(--bg);border-radius:var(--r);
+  border:1.5px solid var(--border);overflow:hidden;
+}
+.faq-q{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:16px 16px;cursor:pointer;
+  font-size:13px;font-weight:700;line-height:1.6;
+  list-style:none;
+}
+.faq-q::marker{display:none;}
+.faq-q-icon{
+  width:22px;height:22px;border-radius:50%;
+  background:var(--orange);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px;
+}
+.faq-a{
+  padding:0 16px 16px 50px;
+  font-size:12px;color:var(--muted);line-height:1.85;
+  display:none;
+}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-q{color:var(--orange);}
+
+/* ══════════════════
+   STAFF
+══════════════════ */
+.staff-section{
+  padding:48px 16px;background:var(--bg);
+}
+.staff-cards{display:flex;flex-direction:column;gap:14px;margin-top:28px;}
+.staff-card{
+  background:var(--white);border-radius:var(--r);
+  border:1.5px solid var(--border);
+  padding:20px 18px;display:flex;gap:16px;
+}
+.staff-avatar{
+  width:60px;height:60px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:800;
+  border:2px solid var(--gold2);flex-shrink:0;
+}
+.staff-info h3{font-size:15px;font-weight:700;margin-bottom:2px;}
+.staff-role{font-size:12px;color:var(--muted);margin-bottom:8px;}
+.staff-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.staff-tag{
+  font-size:10px;font-weight:700;
+  padding:3px 9px;border-radius:20px;
+  background:var(--gold-pale);color:#854F0B;
+  border:1px solid var(--gold2);
+}
+
+/* ══════════════════
+   FINAL CTA
+══════════════════ */
+.final-section{
+  padding:52px 16px 64px;
+  background:linear-gradient(160deg,#FFF5E0 0%,#FFFAF5 60%,#FFF0F5 100%);
+  text-align:center;
+  border-top:3px solid var(--gold2);
+}
+.final-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(20px,5.5vw,26px);font-weight:800;
+  line-height:1.55;margin-bottom:8px;
+}
+.final-title em{font-style:normal;color:var(--pink);}
+.final-sub{
+  font-size:13px;color:var(--muted);
+  line-height:1.85;margin-bottom:28px;
+}
+.final-box{
+  background:var(--white);border-radius:16px;
+  border:2px solid var(--gold2);
+  padding:24px 20px;
+  max-width:400px;margin:0 auto;
+  box-shadow:0 4px 20px rgba(212,160,23,.15);
+}
+.no-sales{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#F0FAF4;border:1.5px solid #8ECFB0;
+  color:var(--green);font-size:11px;font-weight:700;
+  padding:6px 16px;border-radius:20px;margin-bottom:16px;
+}
+.btn-counsel{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;background:var(--orange);color:#fff;
+  font-size:16px;font-weight:700;
+  padding:18px 24px;border-radius:var(--r);
+  text-decoration:none;letter-spacing:.06em;
+  transition:transform .2s,box-shadow .2s;
+  font-family:'Noto Sans JP',sans-serif;
+  margin-bottom:10px;
+}
+.btn-counsel:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(212,56,13,.3);
+}
+.btn-tel{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;background:var(--white);color:var(--text);
+  font-size:16px;font-weight:700;
+  padding:16px 24px;border-radius:var(--r);
+  text-decoration:none;letter-spacing:.05em;
+  border:2px solid var(--border);
+  transition:border-color .2s;
+  font-family:'Noto Sans JP',sans-serif;
+}
+.btn-tel:hover{border-color:var(--gold2);}
+.final-notes{
+  display:flex;justify-content:center;gap:14px;
+  flex-wrap:wrap;margin-top:12px;
+}
+.final-note{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px;}
+.final-note::before{content:'✓';color:var(--green);font-weight:700;}
+.access-info{
+  margin-top:20px;font-size:12px;color:var(--muted);line-height:2;
+}
+
+footer{
+  background:var(--text);color:rgba(255,255,255,.4);
+  padding:20px 16px;text-align:center;
+  font-size:10px;line-height:2;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px);}
+  to{opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<!-- STRIP -->
+<div class="strip">✦ 完全予約制・女性スタッフ対応可｜朝霞台駅南口 徒歩1分</div>
+
+<!-- ══════════════════
+  HERO
+══════════════════ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-badge">初回カウンセリング完全無料</div>
+
+    <h1 class="hero-title">
+      体のお悩み、まずは<br>
+      <em>専門家に話してみませんか</em>
+    </h1>
+    <p class="hero-sub">
+      耳ツボ × 骨格矯正 × 栄養指導<br>
+      あなたの体質・生活習慣にあわせた<br>
+      オーダーメイドのアプローチをご提案します
+    </p>
+
+    <!-- 院内・スタッフ写真スロット -->
+    <div class="hero-img-wrap">
+      <img src="./images/clinic-interior.jpg"
+           alt="タケシフルカワ整骨院 院内の様子"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="hero-img-placeholder">
+        <div class="ph-icon">🏥</div>
+        <div class="ph-text">院内・スタッフの写真をここに入れてください</div>
+        <div class="ph-hint">./images/clinic-interior.jpg</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <div class="urgency-bar-inner">
+    <span>今月の無料カウンセリング残枠</span>
+    <span class="urgency-count">残り8名</span>
+    <span>※定員になり次第締め切ります</span>
+  </div>
+</div>
+
+<!-- ══════════════════
+  予約方法
+══════════════════ -->
+<section class="counseling-section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-eyebrow">予約方法</span>
+      <h2 class="section-title">ご予約は<em>お好きな方法</em>で</h2>
+      <p class="section-sub">
+        オンライン予約・お電話・LINEから<br>
+        お気軽にご連絡ください
+      </p>
+    </div>
+
+    <div class="booking-cards">
+
+      <!-- WEB予約 -->
+      <div class="booking-card reveal">
+        <div class="booking-card-top" style="background:linear-gradient(to right,var(--orange),#FF8050);"></div>
+        <div class="booking-card-body">
+          <div class="booking-icon" style="background:#FFEEE8;">📅</div>
+          <div class="booking-text">
+            <h3>WEB予約（24時間受付）</h3>
+            <p>スマートフォンから簡単に予約できます。<br>ご希望の日時を選ぶだけで完了します。</p>
+          </div>
+        </div>
+        <a href="./reserve.html" class="booking-btn" style="background:var(--orange);color:#fff;">
+          📅 WEBで予約する（無料）
+        </a>
+      </div>
+
+      <!-- LINE予約 -->
+      <div class="booking-card reveal">
+        <div class="booking-card-top" style="background:linear-gradient(to right,#06C755,#40D876);"></div>
+        <div class="booking-card-body">
+          <div class="booking-icon" style="background:#E8FAF0;">💬</div>
+          <div class="booking-text">
+            <h3>LINEで予約・相談</h3>
+            <p>「予約したい」と送るだけでOKです。<br>ご質問やご相談もお気軽にどうぞ。</p>
+          </div>
+        </div>
+        <a href="https://line.me/R/ti/p/%40YOUR_LINE_ID" class="booking-btn" style="background:#06C755;color:#fff;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.7 1.28 5.12 3.31 6.79L4.5 21.5l3.9-1.95C9.53 19.83 10.74 20 12 20c5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
+          LINEで予約・相談する
+        </a>
+      </div>
+
+    </div>
+
+    <!-- 電話 -->
+    <div class="tel-section reveal">
+      <div class="tel-label">📞 お電話でのご予約・お問い合わせ</div>
+      <a href="tel:0120294038" class="tel-num">0120-294-038</a>
+      <div class="tel-hours">
+        受付時間 9:00〜19:30<br>
+        定休日：木曜・日曜・祝日
+      </div>
+    </div>
+
+    <p style="text-align:center;font-size:11px;color:var(--muted);">
+      「予約がしたい」とお伝えいただくだけで大丈夫です
+    </p>
+
+  </div>
+</section>
+
+<!-- ══════════════════
+  カウンセリングでできること
+══════════════════ -->
+<section class="what-section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-eyebrow">無料カウンセリングの内容</span>
+      <h2 class="section-title">カウンセリングで<br><em>できること</em></h2>
+      <p style="font-size:13px;color:var(--muted);margin-top:10px;line-height:1.85;">
+        約60分、あなたのお体のことを<br>
+        じっくりお聞かせいただきます
+      </p>
+    </div>
+
+    <div class="what-cards">
+      <div class="what-card reveal">
+        <div class="what-num">01</div>
+        <div class="what-body">
+          <h3>今の体の状態を確認する</h3>
+          <p>骨格・体質・生活習慣をヒアリングし、現在のお体の状態を丁寧に確認します。これまでのお悩みを何でもお話しください。</p>
+        </div>
+      </div>
+      <div class="what-card reveal">
+        <div class="what-num">02</div>
+        <div class="what-body">
+          <h3>体の悩みの原因を一緒に探る</h3>
+          <p>「なぜ体型が変わってきたのか」「なぜむくみや冷えが続くのか」など、体の状態を専門家の視点でお伝えします。</p>
+        </div>
+      </div>
+      <div class="what-card reveal">
+        <div class="what-num">03</div>
+        <div class="what-body">
+          <h3>あなたに合ったアプローチを提案する</h3>
+          <p>体質・生活習慣・ご要望に合わせて、耳ツボ・骨格矯正・栄養指導の中からお一人おひとりに合った内容をご提案します。</p>
+        </div>
+      </div>
+      <div class="what-card reveal">
+        <div class="what-num">04</div>
+        <div class="what-body">
+          <h3>料金・スケジュールをご説明する</h3>
+          <p>プログラムの内容・料金・通院頻度など、ご不明な点をすべてご説明します。その場でのご契約は一切不要です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════
+  当日の流れ
+══════════════════ -->
+<section class="flow-section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-eyebrow">はじめての方へ</span>
+      <h2 class="section-title">当日の<em>流れ</em></h2>
+    </div>
+
+    <div class="flow-steps">
+      <div class="flow-step reveal">
+        <div class="flow-circle" style="background:var(--green);">1</div>
+        <div class="flow-content">
+          <h3>ご来院・受付</h3>
+          <p>朝霞台駅南口より徒歩1分。受付にてお名前をお伝えください。</p>
+          <span class="flow-time">約5分</span>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-circle" style="background:var(--orange);">2</div>
+        <div class="flow-content">
+          <h3>問診票のご記入</h3>
+          <p>現在のお体の状態・生活習慣・気になることをご記入いただきます。</p>
+          <span class="flow-time">約10分</span>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-circle" style="background:var(--pink);">3</div>
+        <div class="flow-content">
+          <h3>専門家によるカウンセリング</h3>
+          <p>お体の状態の確認と、お悩み・ご希望を丁寧にヒアリングします。何でもお気軽にお話しください。</p>
+          <span class="flow-time">約40〜50分</span>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-circle" style="background:var(--gold);">4</div>
+        <div class="flow-content">
+          <h3>プランのご提案・ご説明</h3>
+          <p>あなたに合ったプランと料金をご説明します。その場でのご契約・お申し込みは一切不要です。ゆっくりご検討ください。</p>
+          <span class="flow-time">約10分</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════
+  お客様の声
+══════════════════ -->
+<section class="voice-section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-eyebrow">カウンセリングを受けた方の声</span>
+      <h2 class="section-title">来院された方の<em>感想</em></h2>
+    </div>
+
+    <div class="voice-cards">
+
+      <div class="voice-card reveal">
+        <p class="voice-text">
+          カウンセリングで初めて「体質から整える」という考え方を知りました。今まで何度試しても変わらなかった理由が、ここに来てやっと分かった気がします。押しつけがましい勧誘もなく、じっくり話を聞いてもらえました。
+        </p>
+        <div class="voice-footer">
+          <div class="voice-avatar">K</div>
+          <div class="voice-info">
+            <div class="voice-name">K.S様</div>
+            <div class="voice-age">52歳・朝霞市在住</div>
+          </div>
+          <span class="voice-tag">カウンセリング後に通院開始</span>
+        </div>
+      </div>
+
+      <div class="voice-card reveal">
+        <p class="voice-text">
+          整骨院のカウンセリングと聞いて少し緊張していましたが、女性スタッフの方が対応してくださって安心しました。体のことを丁寧に説明してもらえて、長年のむくみや冷えの原因が骨盤にあるかもしれないと初めて知りました。
+        </p>
+        <div class="voice-footer">
+          <div class="voice-avatar">M</div>
+          <div class="voice-info">
+            <div class="voice-name">M.T様</div>
+            <div class="voice-age">57歳・新座市在住</div>
+          </div>
+          <span class="voice-tag">カウンセリング後に通院開始</span>
+        </div>
+      </div>
+
+      <div class="voice-card reveal">
+        <p class="voice-text">
+          カウンセリング当日に契約を迫られると思っていたのですが、全くそんなことはなく、「じっくり考えてから決めてください」と言ってもらえました。その言葉がかえって信頼できると感じて、後日申し込みました。
+        </p>
+        <div class="voice-footer">
+          <div class="voice-avatar">Y</div>
+          <div class="voice-info">
+            <div class="voice-name">Y.A様</div>
+            <div class="voice-age">54歳・志木市在住</div>
+          </div>
+          <span class="voice-tag">カウンセリング後に通院開始</span>
+        </div>
+      </div>
+
+    </div>
+    <p class="voice-note reveal">※ 個人の感想です。効果・効能を保証するものではありません。</p>
+  </div>
+</section>
+
+<!-- ══════════════════
+  FAQ
+══════════════════ -->
+<section class="faq-section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-eyebrow">よくあるご質問</span>
+      <h2 class="section-title">来院前の<em>不安を解消</em></h2>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-icon">Q</span>
+          カウンセリングは本当に無料ですか？
+        </div>
+        <div class="faq-a">
+          はい、初回カウンセリングは完全無料です。カウンセリング当日に施術や契約を強制することは一切ありません。内容をご確認いただいてから、ゆっくりご検討ください。
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-icon">Q</span>
+          一人で行っても大丈夫ですか？
+        </div>
+        <div class="faq-a">
+          もちろんです。女性スタッフが対応いたしますので、お一人でも安心してお越しください。ご夫婦・お友達でのご来院も歓迎しております。
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-icon">Q</span>
+          どんな服装で行けばいいですか？
+        </div>
+        <div class="faq-a">
+          普段着で構いません。体の状態を確認させていただく場合がありますが、お着替えは必要ありません。動きやすい服装でお越しいただくとよりスムーズです。
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-icon">Q</span>
+          耳ツボ施術は痛くないですか？
+        </div>
+        <div class="faq-a">
+          耳ツボ施術は小さな金粒を耳のツボに貼るだけです。針を使わないため痛みはほとんどなく、日常生活にも支障がありません。貼ったまま入浴・運動もできます。
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-icon">Q</span>
+          仕事帰りや土曜日でも予約できますか？
+        </div>
+        <div class="faq-a">
+          はい、平日は19:30まで、土曜日も営業しております。お仕事帰りの方も多くご来院いただいています。ご都合のよい時間帯をお選びください。
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-icon">Q</span>
+          更年期や持病があっても受けられますか？
+        </div>
+        <div class="faq-a">
+          カウンセリングの際に現在のお体の状態を詳しくお聞きします。持病や服薬中の方については、安全を最優先に内容をご提案いたします。不安な点はなんでもご相談ください。
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════
+  スタッフ紹介
+══════════════════ -->
+<section class="staff-section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-eyebrow">担当スタッフ</span>
+      <h2 class="section-title">あなたを担当する<em>専門家</em></h2>
+    </div>
+
+    <div class="staff-cards">
+      <div class="staff-card reveal">
+        <!-- スタッフ写真スロット -->
+        <div style="position:relative;flex-shrink:0;">
+          <img src="./images/staff-takeshi.jpg"
+               alt="古川タケシ院長"
+               style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--gold2);"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="staff-avatar" style="background:var(--gold-pale);display:none;">毅</div>
+        </div>
+        <div class="staff-info">
+          <h3>古川 タケシ</h3>
+          <div class="staff-role">院長</div>
+          <div class="staff-tags">
+            <span class="staff-tag">柔道整復師（国家資格）</span>
+            <span class="staff-tag">カイロプラクター</span>
+            <span class="staff-tag">指導歴10年以上</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="staff-card reveal">
+        <div style="position:relative;flex-shrink:0;">
+          <img src="./images/staff-mitsuko.jpg"
+               alt="古川充子先生"
+               style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid #F9C0CB;"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="staff-avatar" style="background:#FFEEF3;border-color:#F9C0CB;display:none;">充</div>
+        </div>
+        <div class="staff-info">
+          <h3>古川 充子</h3>
+          <div class="staff-role">女性担当</div>
+          <div class="staff-tags">
+            <span class="staff-tag">健康管理士一般指導員</span>
+            <span class="staff-tag">健康管理能力検定1級</span>
+            <span class="staff-tag">女性専門</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════
+  FINAL CTA
+══════════════════ -->
+<section class="final-section">
+  <div class="wrap">
+    <h2 class="final-title reveal">
+      まずは話すだけで<br>
+      <em>大丈夫です</em>
+    </h2>
+    <p class="final-sub reveal">
+      無理な勧誘は一切しません。<br>
+      体のことをゆっくり話せる場所が<br>
+      ここにあります。
+    </p>
+
+    <div class="final-box reveal">
+      <div class="no-sales">✓ カウンセリング当日の契約・押しつけは一切なし</div>
+
+      <a href="./reserve.html" class="btn-counsel">
+        📅 WEBで無料カウンセリングを予約する
+      </a>
+      <a href="tel:0120294038" class="btn-tel">
+        📞 電話で予約する
+      </a>
+
+      <div class="final-notes">
+        <span class="final-note">完全予約制</span>
+        <span class="final-note">女性スタッフ対応可</span>
+        <span class="final-note">初回完全無料</span>
+      </div>
+    </div>
+
+    <div class="access-info reveal">
+      <strong>タケシフルカワ整骨院</strong><br>
+      埼玉県朝霞市 朝霞台駅南口 徒歩1分<br>
+      受付時間 9:00〜19:30（木・日・祝休み）
+    </div>
+  </div>
+</section>
+
+<footer>
+  タケシフルカワ整骨院 ／ 埼玉県朝霞市 朝霞台駅南口徒歩1分<br>
+  院長：古川タケシ（柔道整復師）<br>
+  ※ 本ページの掲載内容は一般的な健康情報であり、特定の効果・効能を保証するものではありません。<br>
+  ※ 体調に不安がある方は医師にご相談ください。<br>
+  © 2024 スリムビューティ朝霞台 All Rights Reserved.
+</footer>
+
+<script>
+/* スクロールアニメーション */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+}, {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* FAQ アコーディオン */
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>

@@ -3,1240 +3,1639 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>スリムビューティー朝霞台｜耳ツボ×骨格矯正×栄養指導</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<title>耳ツボダイエット｜スリムビューティ朝霞台｜50代からの体質改善</title>
+<meta name="description" content="耳ツボ×骨格矯正×栄養指導の三位一体プログラム。運動なし・食事制限なしで体質から変わる。朝霞台駅南口徒歩1分。無料カウンセリング受付中。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@700;800&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --gold: #C9A96E;
-    --gold-light: #E8D5A3;
-    --gold-dark: #9A7A4A;
-    --black: #0A0A0A;
-    --dark: #111111;
-    --dark2: #1A1A1A;
-    --dark3: #222222;
-    --white: #FAFAF8;
-    --cream: #F5F0E8;
-    --text: #E8E4DC;
-    --text-muted: #8A8478;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--black);
-    color: var(--text);
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 300;
-    overflow-x: hidden;
-  }
-
-  /* ===== HERO ===== */
-  .hero {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #0A0A0A 0%, #1A1208 50%, #0A0A0A 100%);
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    padding: 60px 20px;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 70% 50%, rgba(201,169,110,0.08) 0%, transparent 60%);
-  }
-
-  .hero-grid {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-badge {
-    display: inline-block;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    padding: 6px 16px;
-    margin-bottom: 28px;
-    font-family: 'Noto Sans JP', sans-serif;
-  }
-
-  .hero-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 300;
-    line-height: 1.4;
-    color: var(--white);
-    margin-bottom: 12px;
-  }
-
-  .hero-title span {
-    color: var(--gold);
-    font-style: italic;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2em;
-  }
-
-  .hero-subtitle {
-    font-size: 14px;
-    color: var(--text-muted);
-    letter-spacing: 0.15em;
-    margin-bottom: 32px;
-    line-height: 2;
-  }
-
-  .hero-points {
-    list-style: none;
-    margin-bottom: 40px;
-  }
-
-  .hero-points li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 14px;
-    color: var(--text);
-    margin-bottom: 12px;
-    line-height: 1.6;
-  }
-
-  .hero-points li::before {
-    content: '';
-    width: 20px;
-    height: 1px;
-    background: var(--gold);
-    flex-shrink: 0;
-  }
-
-  .btn-line {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: #06C755;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    padding: 18px 36px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.3s;
-    letter-spacing: 0.05em;
-  }
-
-  .btn-line:hover {
-    background: #05b34c;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(6,199,85,0.3);
-  }
-
-  .btn-line svg { width: 24px; height: 24px; }
-
-  .hero-image {
-    position: relative;
-    background-color: #ffffff;
-    border-radius: 16px;
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-image-placeholder {
-    text-align: center;
-    color: var(--text-muted);
-    padding: 40px;
-  }
-
-  .hero-image-placeholder .icon {
-    font-size: 64px;
-    margin-bottom: 16px;
-    opacity: 0.4;
-  }
-
-  .hero-image-placeholder p {
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    opacity: 0.5;
-  }
-
-  .hero-image-corner {
-    position: absolute;
-    top: -12px;
-    right: -12px;
-    width: 60px;
-    height: 60px;
-    border-top: 2px solid var(--gold);
-    border-right: 2px solid var(--gold);
-  }
-
-  .hero-image-corner2 {
-    position: absolute;
-    bottom: -12px;
-    left: -12px;
-    width: 60px;
-    height: 60px;
-    border-bottom: 2px solid var(--gold);
-    border-left: 2px solid var(--gold);
-  }
-
-  /* ===== DIVIDER ===== */
-  .divider {
-    text-align: center;
-    padding: 20px 0;
-    color: var(--gold);
-    letter-spacing: 0.3em;
-    font-size: 12px;
-    opacity: 0.6;
-  }
-
-  /* ===== SECTION COMMON ===== */
-  section {
-    padding: 80px 20px;
-  }
-
-  .section-inner {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 13px;
-    letter-spacing: 0.3em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    display: block;
-  }
-
-  .section-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1.5;
-    margin-bottom: 48px;
-  }
-
-  /* ===== PROBLEM ===== */
-  .problem {
-    background: var(--dark);
-  }
-
-  .problem-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2px;
-  }
-
-  .problem-item {
-    background: var(--dark2);
-    padding: 32px 28px;
-    border-left: 2px solid transparent;
-    transition: border-color 0.3s;
-  }
-
-  .problem-item:hover {
-    border-left-color: var(--gold);
-  }
-
-  .problem-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
-    color: rgba(201,169,110,0.15);
-    line-height: 1;
-    margin-bottom: 16px;
-  }
-
-  .problem-text {
-    font-size: 15px;
-    line-height: 1.8;
-    color: var(--text);
-  }
-
-  .problem-text strong {
-    color: var(--gold-light);
-    font-weight: 500;
-  }
-
-  /* ===== WHY ===== */
-  .why {
-    background: var(--black);
-  }
-
-  .why-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-  }
-
-  .why-card {
-    background: var(--dark2);
-    border: 1px solid rgba(201,169,110,0.15);
-    padding: 36px 28px;
-    text-align: center;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .why-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    transform: scaleX(0);
-    transition: transform 0.3s;
-  }
-
-  .why-card:hover::after { transform: scaleX(1); }
-  .why-card:hover { border-color: rgba(201,169,110,0.4); }
-
-  .why-icon {
-    font-size: 40px;
-    margin-bottom: 20px;
-    display: block;
-  }
-
-  .why-card-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 16px;
-    color: var(--gold-light);
-    margin-bottom: 12px;
-    font-weight: 400;
-  }
-
-  .why-card-text {
-    font-size: 13px;
-    line-height: 1.9;
-    color: var(--text-muted);
-  }
-
-  /* ===== FEATURE ===== */
-  .feature {
-    background: var(--dark);
-  }
-
-  .feature-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .feature-item {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 0;
-    background: var(--dark2);
-    overflow: hidden;
-  }
-
-  .feature-num {
-    background: var(--dark3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    color: var(--gold);
-    font-style: italic;
-  }
-
-  .feature-content {
-    padding: 28px 32px;
-    border-left: 1px solid rgba(201,169,110,0.1);
-  }
-
-  .feature-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 18px;
-    color: var(--white);
-    margin-bottom: 10px;
-    font-weight: 400;
-  }
-
-  .feature-title span {
-    color: var(--gold);
-  }
-
-  .feature-desc {
-    font-size: 14px;
-    line-height: 1.9;
-    color: var(--text-muted);
-  }
-
-  /* ===== SENSEI ===== */
-  .sensei {
-    background: var(--black);
-  }
-
-  .sensei-inner {
-    max-width: 800px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 48px;
-    align-items: start;
-  }
-
-  .sensei-photo {
-    background: var(--dark2);
-    border: 1px solid rgba(201,169,110,0.2);
-    aspect-ratio: 3/4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-muted);
-    font-size: 48px;
-    opacity: 0.5;
-    border-radius: 2px;
-  }
-
-  .sensei-name {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 24px;
-    color: var(--white);
-    font-weight: 300;
-    margin-bottom: 4px;
-  }
-
-  .sensei-title {
-    font-size: 13px;
-    color: var(--gold);
-    letter-spacing: 0.15em;
-    margin-bottom: 24px;
-  }
-
-  .sensei-license {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
-  }
-
-  .license-badge {
-    font-size: 11px;
-    border: 1px solid var(--gold-dark);
-    color: var(--gold-light);
-    padding: 4px 12px;
-    letter-spacing: 0.1em;
-  }
-
-  .sensei-text {
-    font-size: 14px;
-    line-height: 2;
-    color: var(--text-muted);
-  }
-
-  /* ===== VOICE ===== */
-  .voice {
-    background: var(--dark);
-  }
-
-  .voice-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2px;
-  }
-
-  .voice-item {
-    background: var(--dark2);
-    padding: 32px 28px;
-  }
-
-  .voice-quote {
-    font-size: 32px;
-    color: var(--gold);
-    opacity: 0.3;
-    line-height: 1;
-    margin-bottom: 12px;
-    font-family: 'Cormorant Garamond', serif;
-  }
-
-  .voice-text {
-    font-size: 14px;
-    line-height: 1.9;
-    color: var(--text);
-    margin-bottom: 20px;
-  }
-
-  .voice-result {
-    font-size: 20px;
-    color: var(--gold-light);
-    font-family: 'Noto Serif JP', serif;
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-
-  .voice-name {
-    font-size: 12px;
-    color: var(--text-muted);
-    letter-spacing: 0.1em;
-  }
-
-  /* ===== FLOW ===== */
-  .flow {
-    background: var(--black);
-  }
-
-  .flow-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    position: relative;
-  }
-
-  .flow-steps::before {
-    content: '';
-    position: absolute;
-    left: 28px;
-    top: 40px;
-    bottom: 40px;
-    width: 1px;
-    background: linear-gradient(180deg, var(--gold-dark), transparent);
-  }
-
-  .flow-step {
-    display: grid;
-    grid-template-columns: 60px 1fr;
-    gap: 24px;
-    padding: 28px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-
-  .flow-step:last-child { border-bottom: none; }
-
-  .flow-circle {
-    width: 56px;
-    height: 56px;
-    border: 1px solid var(--gold-dark);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    color: var(--gold);
-    background: var(--black);
-    position: relative;
-    z-index: 1;
-    flex-shrink: 0;
-  }
-
-  .flow-content-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 17px;
-    color: var(--white);
-    margin-bottom: 8px;
-    font-weight: 400;
-  }
-
-  .flow-content-text {
-    font-size: 13px;
-    line-height: 1.9;
-    color: var(--text-muted);
-  }
-
-  /* ===== CTA ===== */
-  .cta {
-    background: linear-gradient(135deg, #0A0A0A 0%, #1A1208 50%, #0A0A0A 100%);
-    text-align: center;
-    padding: 100px 20px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cta::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 50% 50%, rgba(201,169,110,0.06) 0%, transparent 70%);
-  }
-
-  .cta-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .cta-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1.5;
-    margin-bottom: 16px;
-  }
-
-  .cta-sub {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 48px;
-    line-height: 2;
-  }
-
-  .cta-note {
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-top: 24px;
-    opacity: 0.6;
-  }
-
-  /* ===== MAP ===== */
-  .map-section {
-    background: var(--dark);
-    padding: 60px 20px;
-  }
-
-  .map-inner {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .map-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    margin-bottom: 32px;
-  }
-
-  .map-detail {
-    font-size: 14px;
-    line-height: 2;
-    color: var(--text-muted);
-  }
-
-  .map-detail strong {
-    color: var(--gold-light);
-    display: block;
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    margin-bottom: 6px;
-  }
-
-  .map-embed {
-    border: 1px solid rgba(201,169,110,0.2);
-    border-radius: 2px;
-    overflow: hidden;
-    height: 300px;
-    background: var(--dark2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-muted);
-    font-size: 14px;
-  }
-
-  .map-embed iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    filter: grayscale(0.5) invert(0.85) hue-rotate(180deg);
-  }
-
-  /* ===== FOOTER ===== */
-  footer {
-    background: var(--black);
-    padding: 40px 20px;
-    text-align: center;
-    border-top: 1px solid rgba(201,169,110,0.1);
-  }
-
-  .footer-logo {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 18px;
-    color: var(--gold);
-    margin-bottom: 8px;
-    font-weight: 300;
-    letter-spacing: 0.2em;
-  }
-
-  .footer-text {
-    font-size: 12px;
-    color: var(--text-muted);
-    letter-spacing: 0.1em;
-  }
-
-  /* ===== STICKY LINE ===== */
-  .sticky-line {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 100;
-  }
-
-  .sticky-line a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #06C755;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 14px 22px;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 4px 20px rgba(6,199,85,0.4);
-    transition: all 0.3s;
-  }
-
-  .sticky-line a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(6,199,85,0.5);
-  }
-
-  /* ===== TOKUTEN BANNER ===== */
-  .tokuten {
-    background: linear-gradient(135deg, #1A1208 0%, #2a1e08 50%, #1A1208 100%);
-    border-top: 1px solid rgba(201,169,110,0.3);
-    border-bottom: 1px solid rgba(201,169,110,0.3);
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  .tokuten-inner {
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .tokuten-label {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--black);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    padding: 4px 16px;
-    margin-bottom: 16px;
-  }
-
-  .tokuten-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-    color: var(--white);
-    font-weight: 300;
-    margin-bottom: 12px;
-    line-height: 1.6;
-  }
-
-  .tokuten-title span {
-    color: var(--gold);
-    font-weight: 600;
-  }
-
-  .tokuten-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-
-  .tokuten-list li {
-    background: rgba(201,169,110,0.1);
-    border: 1px solid rgba(201,169,110,0.3);
-    color: var(--gold-light);
-    font-size: 13px;
-    padding: 6px 18px;
-    letter-spacing: 0.05em;
-  }
-
-  .tokuten-note {
-    font-size: 11px;
-    color: var(--text-muted);
-    margin-top: 12px;
-  }
-
-  /* ===== MINI CTA ===== */
-  .mini-cta {
-    background: var(--dark3);
-    padding: 48px 20px;
-    text-align: center;
-    border-top: 1px solid rgba(201,169,110,0.1);
-    border-bottom: 1px solid rgba(201,169,110,0.1);
-  }
-
-  .mini-cta-text {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(1rem, 2vw, 1.3rem);
-    color: var(--white);
-    font-weight: 300;
-    margin-bottom: 24px;
-  }
-
-  /* ===== BENEFITS ===== */
-  .benefits {
-    background: var(--dark);
-    padding: 64px 20px;
-  }
-
-  .benefits-inner {
-    max-width: 680px;
-    margin: 0 auto;
-  }
-
-  .benefits-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    color: var(--gold);
-    letter-spacing: 0.15em;
-    text-align: center;
-    margin-bottom: 32px;
-    font-weight: 300;
-  }
-
-  .benefits-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .benefits-item {
-    background: var(--dark2);
-    border-left: 3px solid var(--gold);
-    padding: 20px 24px;
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-  }
-
-  .benefits-icon {
-    font-size: 24px;
-    flex-shrink: 0;
-    line-height: 1.5;
-  }
-
-  .benefits-text {
-    font-size: 15px;
-    line-height: 1.8;
-    color: var(--text);
-  }
-
-  .benefits-text strong {
-    display: block;
-    color: var(--white);
-    font-weight: 500;
-    margin-bottom: 4px;
-  }
-
-  /* ===== GOLD LINE ===== */
-  .gold-line {
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
-    margin-bottom: 24px;
-  }
-
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 768px) {
-    .hero-grid {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-
-    .hero-image { display: block; text-align: center; margin-top: 20px; }
-
-    .hero-image img { width: 90%; max-width: 360px; height: auto; }
-
-    .sensei-inner {
-      grid-template-columns: 1fr;
-    }
-
-    .sensei-photo { display: none; }
-
-    .map-info {
-      grid-template-columns: 1fr;
-    }
-
-    .feature-item {
-      grid-template-columns: 60px 1fr;
-    }
-
-    section { padding: 60px 20px; }
-  }
-
-  /* ===== ANIMATIONS ===== */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-content > * {
-    animation: fadeInUp 0.8s ease forwards;
-    opacity: 0;
-  }
-
-  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
-  .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
-  .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
-  .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
-  .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+/* ── RESET & BASE ── */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:#FFF9F0;
+  color:#1A1510;
+  font-family:'Noto Sans JP',sans-serif;
+  overflow-x:hidden;
+  font-size:15px;
+  line-height:1.7;
+}
+img{max-width:100%;height:auto;display:block;}
+
+/* ── VARIABLES ── */
+:root{
+  --pink:#E8527A;
+  --pink-light:#FFE8EE;
+  --orange:#D4380D;
+  --gold:#D4A017;
+  --gold2:#F5C842;
+  --gold-pale:#FEF8E0;
+  --green:#06C755;
+  --green-dark:#059048;
+  --purple:#7B5EA7;
+  --purple-light:#F0EBFA;
+  --teal:#2E9E6B;
+  --teal-light:#E6F7F0;
+  --bg:#FFF9F0;
+  --white:#FFFFFF;
+  --text:#1A1510;
+  --text-soft:#666666;
+  --border:#EEE0CC;
+  --radius:10px;
+}
+
+/* ── UTILITIES ── */
+.wrap{max-width:560px;margin:0 auto;padding:0 16px;}
+.section{padding:56px 0;}
+.section-eyebrow{
+  display:inline-block;
+  background:var(--pink);color:#fff;
+  font-size:11px;font-weight:700;letter-spacing:.12em;
+  padding:5px 14px;border-radius:20px;margin-bottom:12px;
+}
+.section-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(21px,5.5vw,28px);
+  font-weight:800;line-height:1.5;
+  letter-spacing:.02em;
+}
+.section-title em{font-style:normal;color:var(--pink);border-bottom:3px solid var(--gold2);}
+.divider{
+  width:40px;height:3px;
+  background:linear-gradient(to right,var(--gold),var(--gold2));
+  border-radius:2px;margin:16px auto 0;
+}
+.card{
+  background:var(--white);
+  border-radius:var(--radius);
+  border:1.5px solid var(--border);
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
+}
+.btn-line{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;background:var(--green);color:#fff;
+  font-size:16px;font-weight:700;
+  padding:18px 24px;border:none;border-radius:var(--radius);
+  cursor:pointer;letter-spacing:.06em;text-decoration:none;
+  font-family:'Noto Sans JP',sans-serif;
+  transition:transform .2s,box-shadow .2s,filter .2s;
+}
+.btn-line:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(6,199,85,.35);filter:brightness(1.05);}
+.no-sales{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#F0FAF4;border:1.5px solid #8ECFB0;
+  color:var(--teal);font-size:11px;font-weight:700;
+  padding:6px 16px;border-radius:20px;
+}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.on{opacity:1;transform:translateY(0);}
+
+/* ── TOP STRIP ── */
+.top-strip{
+  background:var(--orange);color:#fff;
+  text-align:center;padding:10px 16px;
+  font-size:12px;font-weight:700;letter-spacing:.08em;
+}
+
+/* ══════════════════════════════
+   SECTION 1: FIRSTVIEW
+══════════════════════════════ */
+.fv{
+  background:linear-gradient(160deg,#FFF5E0 0%,#FFFAF5 50%,#FFF0F5 100%);
+  padding:44px 16px 40px;
+  text-align:center;
+  position:relative;overflow:hidden;
+  border-bottom:3px solid var(--gold2);
+}
+.fv::before{
+  content:'';position:absolute;
+  top:-80px;right:-80px;
+  width:240px;height:240px;border-radius:50%;
+  background:rgba(212,160,23,.07);pointer-events:none;
+}
+.fv::after{
+  content:'';position:absolute;
+  bottom:-60px;left:-60px;
+  width:180px;height:180px;border-radius:50%;
+  background:rgba(232,82,122,.05);pointer-events:none;
+}
+.fv-badge{
+  display:inline-block;
+  background:#fff;border:2px solid var(--gold2);
+  color:var(--gold);font-size:12px;font-weight:700;
+  padding:6px 18px;border-radius:24px;margin-bottom:18px;
+  box-shadow:0 2px 8px rgba(212,160,23,.15);
+  animation:fadeUp .6s ease both;
+}
+.fv-kv{
+  animation:fadeUp .6s .05s ease both;
+  margin-bottom:6px;
+}
+.fv-kv-num{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(42px,10vw,58px);
+  font-weight:800;line-height:1;
+  background:linear-gradient(135deg,var(--pink),#FF8FAB);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.fv-kv-unit{font-size:.45em;-webkit-text-fill-color:var(--pink);}
+.fv-kv-label{font-size:13px;color:var(--text-soft);margin-bottom:20px;}
+.fv-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(22px,6vw,30px);font-weight:800;
+  line-height:1.5;margin-bottom:8px;
+  animation:fadeUp .6s .1s ease both;
+}
+.fv-title em{font-style:normal;color:var(--orange);}
+.fv-sub{
+  font-size:13px;color:var(--text-soft);line-height:1.85;
+  margin-bottom:24px;
+  animation:fadeUp .6s .15s ease both;
+}
+.fv-nums{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:8px;margin-bottom:20px;
+  animation:fadeUp .6s .2s ease both;
+}
+.fv-num-box{
+  background:var(--gold-pale);border-radius:var(--radius);
+  padding:12px 4px;text-align:center;
+  border:1px solid rgba(212,160,23,.2);
+}
+.fv-num-box.main{border:2px solid var(--gold2);}
+.fv-num-val{
+  font-family:'Shippori Mincho',serif;
+  font-size:22px;font-weight:800;color:var(--orange);line-height:1;
+}
+.fv-num-label{font-size:10px;color:#854F0B;margin-top:3px;}
+.fv-checks{
+  background:var(--white);border-radius:var(--radius);
+  border:1px solid var(--border);
+  padding:14px 16px;margin-bottom:22px;text-align:left;
+  display:flex;flex-direction:column;gap:9px;
+  animation:fadeUp .6s .25s ease both;
+}
+.fv-check-item{display:flex;align-items:center;gap:10px;font-size:13px;}
+.fv-check-item::before{
+  content:'✓';
+  display:flex;align-items:center;justify-content:center;
+  width:20px;height:20px;border-radius:50%;
+  background:var(--teal);color:#fff;
+  font-size:11px;font-weight:700;flex-shrink:0;
+}
+.fv-cta{animation:fadeUp .6s .3s ease both;}
+.fv-cta-note{
+  font-size:11px;color:var(--text-soft);margin-top:8px;
+  text-align:center;
+}
+.fv-profile{
+  display:flex;align-items:center;gap:12px;
+  background:var(--gold-pale);border-top:2px solid var(--gold2);
+  padding:14px 20px;margin-top:0;
+  animation:fadeUp .6s .35s ease both;
+}
+.fv-avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--gold2);display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:700;color:#633806;flex-shrink:0;
+}
+.fv-profile-name{font-size:13px;font-weight:700;}
+.fv-profile-sub{font-size:11px;color:#854F0B;}
+
+/* ══════════════════════════════
+   SECTION 2: APPEAL BAR
+══════════════════════════════ */
+.appeal-bar{
+  background:linear-gradient(135deg,var(--pink) 0%,#FF8FAB 100%);
+  padding:20px 16px;text-align:center;
+}
+.appeal-bar-title{
+  color:#fff;font-size:clamp(15px,4.5vw,19px);
+  font-weight:900;line-height:1.5;margin-bottom:4px;
+}
+.appeal-bar-sub{color:rgba(255,255,255,.85);font-size:12px;}
+
+/* ══════════════════════════════
+   SECTION 3: PAIN
+══════════════════════════════ */
+.pain-list{
+  display:flex;flex-direction:column;gap:10px;
+  margin-top:28px;
+}
+.pain-item{
+  display:flex;align-items:flex-start;gap:12px;
+  background:var(--white);border-radius:var(--radius);
+  border:1.5px solid var(--border);
+  padding:14px 16px;
+}
+.pain-icon{
+  font-size:20px;flex-shrink:0;margin-top:1px;
+}
+.pain-text{font-size:13px;line-height:1.75;}
+.pain-bottom{
+  margin-top:24px;
+  background:var(--pink-light);border:1.5px solid rgba(232,82,122,.25);
+  border-radius:var(--radius);padding:16px 18px;
+  font-size:13px;line-height:1.85;text-align:center;
+}
+.pain-bottom strong{color:var(--pink);font-size:15px;}
+
+/* ══════════════════════════════
+   SECTION 4: WHY
+══════════════════════════════ */
+.why-section{background:var(--white);}
+.why-stats{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:10px;margin-top:28px;
+}
+.why-stat{
+  background:var(--bg);border-radius:var(--radius);
+  border:1.5px solid var(--border);
+  padding:18px 14px;text-align:center;
+}
+.why-stat-val{
+  font-family:'Shippori Mincho',serif;
+  font-size:32px;font-weight:800;color:var(--pink);line-height:1;
+}
+.why-stat-unit{font-size:14px;color:var(--text-soft);}
+.why-stat-label{font-size:11px;color:var(--text-soft);margin-top:6px;line-height:1.5;}
+.why-body{
+  margin-top:20px;font-size:13px;line-height:1.9;color:var(--text);
+}
+.why-body p{margin-bottom:12px;}
+.why-body strong{color:var(--orange);}
+
+/* ══════════════════════════════
+   SECTION 5: METHOD
+══════════════════════════════ */
+.method-cards{
+  display:flex;flex-direction:column;gap:14px;margin-top:28px;
+}
+.method-card{
+  background:var(--white);border-radius:var(--radius);
+  border:1.5px solid var(--border);
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+.method-card-top{
+  height:5px;
+}
+.method-card-body{
+  padding:18px 18px 16px;
+  display:flex;gap:14px;align-items:flex-start;
+}
+.method-num{
+  font-family:'Shippori Mincho',serif;
+  font-size:28px;font-weight:800;
+  line-height:1;flex-shrink:0;width:32px;
+  margin-top:2px;
+}
+.method-text h3{font-size:15px;font-weight:700;margin-bottom:6px;}
+.method-text p{font-size:12px;line-height:1.8;color:var(--text-soft);}
+.method-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.method-tag{
+  font-size:11px;font-weight:700;
+  padding:3px 10px;border-radius:20px;
+}
+
+/* ══════════════════════════════
+   SECTION 6: STEPS
+══════════════════════════════ */
+.steps-section{background:var(--white);}
+.steps{display:flex;flex-direction:column;gap:0;margin-top:28px;}
+.step{
+  display:flex;gap:16px;
+  padding-bottom:28px;position:relative;
+}
+.step:last-child{padding-bottom:0;}
+.step:not(:last-child)::after{
+  content:'';
+  position:absolute;left:19px;top:44px;
+  width:2px;bottom:0;
+  background:repeating-linear-gradient(to bottom,var(--gold2) 0,var(--gold2) 6px,transparent 6px,transparent 12px);
+}
+.step-circle{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;color:#fff;
+  flex-shrink:0;z-index:1;
+}
+.step-content h3{font-size:15px;font-weight:700;margin-bottom:4px;padding-top:8px;}
+.step-content p{font-size:12px;color:var(--text-soft);line-height:1.8;}
+
+/* ══════════════════════════════
+   SECTION 7: VOICES
+══════════════════════════════ */
+.voices-section{background:var(--bg);}
+.voice-cards{display:flex;flex-direction:column;gap:14px;margin-top:28px;}
+.voice-card{
+  background:var(--white);border-radius:var(--radius);
+  border:1.5px solid var(--border);
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+.voice-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;border-bottom:1.5px solid var(--border);
+  background:var(--bg);
+}
+.voice-period{
+  font-size:11px;font-weight:700;
+  padding:3px 12px;border-radius:20px;
+  background:var(--pink-light);color:var(--pink);
+  border:1px solid rgba(232,82,122,.2);
+}
+.voice-profile{font-size:12px;color:var(--text-soft);}
+.voice-nums{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  padding:14px 16px;gap:8px;
+  border-bottom:1.5px solid var(--border);
+}
+.v-num-box{
+  text-align:center;background:var(--bg);
+  border-radius:8px;padding:10px 4px;
+}
+.v-num-label{font-size:9px;color:var(--text-soft);margin-bottom:3px;}
+.v-num-val{
+  font-family:'Shippori Mincho',serif;
+  font-size:18px;font-weight:800;line-height:1;
+}
+.v-num-unit{font-size:10px;font-weight:400;color:var(--text-soft);}
+.v-num-box.main-num .v-num-val{font-size:24px;color:var(--pink);}
+.voice-changes{
+  padding:12px 16px;border-bottom:1.5px solid var(--border);
+  display:flex;flex-direction:column;gap:7px;
+}
+.v-change{display:flex;align-items:flex-start;gap:8px;font-size:12px;line-height:1.7;}
+.v-check{
+  width:18px;height:18px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:#fff;font-weight:700;
+  flex-shrink:0;margin-top:1px;
+}
+.voice-quote{padding:14px 16px 18px;background:var(--bg);}
+.voice-quote-inner{
+  background:var(--white);border-radius:8px;
+  padding:14px 16px;position:relative;
+}
+.voice-quote-inner::before{
+  content:'❝';position:absolute;
+  top:6px;left:10px;
+  font-size:26px;color:var(--border);line-height:1;
+}
+.voice-text{
+  font-size:12px;line-height:1.85;
+  padding-left:18px;padding-top:4px;
+  font-style:italic;
+}
+.voice-name{
+  margin-top:8px;font-size:10px;
+  color:var(--text-soft);text-align:right;font-style:normal;
+}
+.voice-note{
+  text-align:center;margin-top:16px;
+  font-size:10px;color:#ccc;line-height:1.9;
+}
+
+/* ══════════════════════════════
+   SECTION 8: AGE BA (年代別)
+══════════════════════════════ */
+.age-section{background:var(--white);}
+.age-cards{
+  display:flex;flex-direction:column;
+  gap:12px;margin-top:28px;
+}
+.age-card{
+  background:var(--bg);border-radius:var(--radius);
+  border:2px solid var(--border);
+  overflow:hidden;cursor:pointer;
+  text-decoration:none;display:block;
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  position:relative;
+}
+.age-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.12);}
+.age-card[data-age="50"]{border-color:#F5C842;}
+.age-card[data-age="50"]:hover{border-color:var(--gold);}
+.age-card[data-age="40"]{border-color:#C9A8E0;}
+.age-card[data-age="40"]:hover{border-color:var(--purple);}
+.age-card[data-age="30"]{border-color:#8ECFB0;}
+.age-card[data-age="30"]:hover{border-color:var(--teal);}
+.age-top-bar{height:5px;}
+.age-card[data-age="50"] .age-top-bar{background:linear-gradient(to right,var(--gold),var(--gold2));}
+.age-card[data-age="40"] .age-top-bar{background:linear-gradient(to right,var(--purple),#B090D8);}
+.age-card[data-age="30"] .age-top-bar{background:linear-gradient(to right,var(--teal),#60C090);}
+.age-card-inner{display:flex;align-items:center;gap:14px;padding:16px 14px;}
+.age-circle{
+  width:60px;height:60px;border-radius:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  flex-shrink:0;line-height:1;
+}
+.age-card[data-age="50"] .age-circle{background:var(--gold-pale);border:2px solid var(--gold2);}
+.age-card[data-age="40"] .age-circle{background:var(--purple-light);border:2px solid #C9A8E0;}
+.age-card[data-age="30"] .age-circle{background:var(--teal-light);border:2px solid #8ECFB0;}
+.age-num{
+  font-family:'Shippori Mincho',serif;
+  font-size:24px;font-weight:800;
+}
+.age-card[data-age="50"] .age-num{color:var(--gold);}
+.age-card[data-age="40"] .age-num{color:var(--purple);}
+.age-card[data-age="30"] .age-num{color:var(--teal);}
+.age-dai{font-size:10px;color:var(--text-soft);font-weight:700;}
+.age-card-text{flex:1;}
+.age-card-title{font-size:15px;font-weight:900;margin-bottom:4px;}
+.age-card-desc{font-size:11px;color:var(--text-soft);line-height:1.65;}
+.age-pills{display:flex;gap:6px;margin-top:7px;flex-wrap:wrap;}
+.age-pill{font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;}
+.age-card[data-age="50"] .age-pill{background:var(--gold-pale);color:var(--gold);border:1px solid var(--gold2);}
+.age-card[data-age="40"] .age-pill{background:var(--purple-light);color:var(--purple);border:1px solid #C9A8E0;}
+.age-card[data-age="30"] .age-pill{background:var(--teal-light);color:var(--teal);border:1px solid #8ECFB0;}
+.age-arrow{font-size:20px;color:var(--border);flex-shrink:0;transition:color .2s,transform .2s;}
+.age-card:hover .age-arrow{transform:translateX(4px);}
+.age-card[data-age="50"]:hover .age-arrow{color:var(--gold);}
+.age-card[data-age="40"]:hover .age-arrow{color:var(--purple);}
+.age-card[data-age="30"]:hover .age-arrow{color:var(--teal);}
+.hot-tag{
+  position:absolute;top:10px;right:10px;
+  background:var(--pink);color:#fff;
+  font-size:9px;font-weight:700;letter-spacing:.08em;
+  padding:3px 10px;border-radius:20px;
+}
+
+/* ── AGE DETAIL OVERLAY ── */
+.age-detail{
+  display:none;
+  position:fixed;inset:0;z-index:200;
+  background:var(--bg);overflow-y:auto;
+}
+.age-detail.open{display:block;}
+.age-detail-header{
+  position:sticky;top:0;z-index:10;
+  background:var(--white);
+  border-bottom:2px solid var(--border);
+  padding:12px 16px;display:flex;align-items:center;gap:12px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.back-btn{
+  background:var(--bg);border:1.5px solid var(--border);
+  color:var(--text-soft);font-size:12px;font-weight:700;
+  padding:7px 14px;border-radius:20px;cursor:pointer;
+  font-family:'Noto Sans JP',sans-serif;
+  display:flex;align-items:center;gap:5px;
+  transition:all .2s;
+}
+.back-btn:hover{background:var(--border);color:var(--text);}
+.detail-label{font-size:13px;font-weight:700;}
+.detail-hero{
+  padding:32px 16px 24px;text-align:center;
+  max-width:560px;margin:0 auto;
+}
+.detail-eyebrow{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:700;letter-spacing:.15em;
+  margin-bottom:14px;padding:5px 16px;border-radius:20px;
+}
+.detail-hero-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(19px,5vw,24px);font-weight:800;
+  line-height:1.55;margin-bottom:8px;
+}
+.detail-hero-sub{font-size:12px;color:var(--text-soft);line-height:1.85;}
+.detail-cases{
+  max-width:560px;margin:0 auto;
+  padding:0 16px 48px;
+  display:flex;flex-direction:column;gap:16px;
+}
+.d-case{
+  background:var(--white);border-radius:var(--radius);
+  border:1.5px solid var(--border);
+  overflow:hidden;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+.d-case-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;border-bottom:1.5px solid var(--border);
+}
+.d-case-num{
+  font-size:10px;font-weight:700;
+  padding:4px 12px;border-radius:20px;letter-spacing:.1em;
+}
+.d-case-profile{font-size:12px;color:var(--text-soft);}
+.d-case-period{
+  font-size:10px;background:var(--bg);
+  border:1px solid var(--border);color:var(--text-soft);
+  padding:3px 10px;border-radius:20px;
+}
+.d-sil-row{
+  display:flex;align-items:flex-end;justify-content:center;
+  gap:24px;padding:24px 16px 16px;background:var(--bg);
+}
+.d-sil-col{text-align:center;}
+.d-sil-col svg{display:block;margin:0 auto 8px;}
+.sil-lbl{
+  display:inline-block;font-size:9px;font-weight:700;
+  padding:3px 14px;border-radius:20px;letter-spacing:.12em;
+}
+.sil-lbl.before{background:#eee;color:#999;}
+.d-sil-arrow{
+  align-self:center;padding-bottom:24px;
+  font-size:24px;color:var(--pink);font-weight:900;
+}
+.d-nums{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  padding:14px 16px;gap:8px;
+  border-bottom:1.5px solid var(--border);
+}
+.d-num-box{
+  text-align:center;background:var(--bg);
+  border-radius:8px;padding:10px 4px;
+}
+.d-num-label{font-size:9px;color:var(--text-soft);margin-bottom:3px;}
+.d-num-val{
+  font-family:'Shippori Mincho',serif;
+  font-size:18px;font-weight:800;line-height:1;
+}
+.d-num-box.main .d-num-val{font-size:24px;color:var(--pink);}
+.d-num-unit{font-size:10px;font-weight:400;color:var(--text-soft);}
+.d-changes{
+  padding:12px 16px;border-bottom:1.5px solid var(--border);
+  display:flex;flex-direction:column;gap:8px;
+}
+.d-change{display:flex;align-items:flex-start;gap:8px;font-size:12px;line-height:1.75;}
+.d-chk{
+  width:18px;height:18px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:#fff;font-weight:700;flex-shrink:0;margin-top:1px;
+}
+.d-voice{padding:14px 16px 18px;background:var(--bg);}
+.d-voice-inner{
+  background:var(--white);border-radius:8px;
+  padding:14px 16px;position:relative;
+}
+.d-voice-inner::before{
+  content:'❝';position:absolute;
+  top:6px;left:10px;font-size:26px;color:var(--border);line-height:1;
+}
+.d-voice-text{
+  font-size:12px;line-height:1.85;
+  padding-left:18px;padding-top:4px;font-style:italic;
+}
+.d-voice-name{margin-top:8px;font-size:10px;color:var(--text-soft);text-align:right;font-style:normal;}
+.detail-cta-wrap{max-width:560px;margin:0 auto;padding:0 16px 48px;}
+.detail-cta-box{
+  background:var(--white);border-radius:16px;
+  border:2px solid var(--border);overflow:hidden;
+  box-shadow:0 4px 16px rgba(0,0,0,.08);
+}
+.detail-cta-inner{padding:24px 20px 20px;text-align:center;}
+.detail-cta-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(18px,4.5vw,22px);font-weight:800;
+  line-height:1.55;margin-bottom:8px;
+}
+.detail-cta-sub{font-size:12px;color:var(--text-soft);line-height:1.85;margin-bottom:16px;}
+.detail-cta-notes{
+  padding:12px 20px 16px;border-top:1.5px solid var(--border);
+  display:flex;justify-content:center;gap:16px;flex-wrap:wrap;
+  background:var(--bg);
+}
+.cta-note-item{
+  font-size:11px;color:var(--text-soft);
+  display:flex;align-items:center;gap:4px;
+}
+.cta-note-item::before{content:'✓';color:var(--green);font-weight:700;}
+.detail-disclaimer{
+  text-align:center;font-size:10px;color:#ccc;
+  line-height:2;padding:0 16px 40px;
+  max-width:560px;margin:0 auto;
+}
+
+/* ══════════════════════════════
+   SECTION 9: FEATURES
+══════════════════════════════ */
+.features-section{background:var(--bg);}
+.feature-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:10px;margin-top:28px;
+}
+.feature-item{
+  background:var(--white);border-radius:var(--radius);
+  border:1.5px solid var(--border);
+  padding:16px 14px;text-align:center;
+}
+.feature-icon{
+  font-size:26px;margin-bottom:8px;
+}
+.feature-title{font-size:13px;font-weight:700;margin-bottom:4px;}
+.feature-desc{font-size:11px;color:var(--text-soft);line-height:1.65;}
+
+/* ══════════════════════════════
+   SECTION 10: GIFT
+══════════════════════════════ */
+.gift-section{background:var(--white);}
+.gift-badge{
+  display:inline-block;
+  background:var(--pink);color:#fff;
+  font-size:11px;font-weight:700;letter-spacing:.1em;
+  padding:5px 16px;border-radius:20px;margin-bottom:12px;
+}
+.gift-cards{display:flex;flex-direction:column;gap:10px;margin-top:24px;}
+.gift-card{
+  background:var(--bg);border-radius:var(--radius);
+  border:1.5px solid var(--border);
+  padding:16px;display:flex;gap:14px;align-items:flex-start;
+}
+.gift-num{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--pink);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;flex-shrink:0;
+}
+.gift-body h4{font-size:14px;font-weight:700;margin-bottom:4px;}
+.gift-body p{font-size:12px;color:var(--text-soft);line-height:1.7;}
+.gift-price{
+  margin-top:4px;font-size:11px;
+  color:var(--pink);font-weight:700;
+}
+.gift-total{
+  background:var(--pink-light);border:2px solid rgba(232,82,122,.3);
+  border-radius:var(--radius);padding:16px;text-align:center;margin-top:14px;
+}
+.gift-total-val{
+  font-family:'Shippori Mincho',serif;
+  font-size:32px;font-weight:800;color:var(--pink);line-height:1;
+}
+.gift-total-label{font-size:12px;color:var(--text-soft);margin-top:4px;}
+
+/* ══════════════════════════════
+   SECTION 11: STAFF
+══════════════════════════════ */
+.staff-section{background:var(--bg);}
+.staff-cards{display:flex;flex-direction:column;gap:14px;margin-top:28px;}
+.staff-card{
+  background:var(--white);border-radius:var(--radius);
+  border:1.5px solid var(--border);
+  padding:20px 18px;display:flex;gap:16px;align-items:flex-start;
+}
+.staff-avatar{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--gold2);display:flex;align-items:center;justify-content:center;
+  font-size:22px;font-weight:800;color:#633806;flex-shrink:0;
+  border:2px solid var(--gold);
+}
+.staff-info h3{font-size:16px;font-weight:700;margin-bottom:2px;}
+.staff-info .role{font-size:12px;color:var(--text-soft);margin-bottom:8px;}
+.staff-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.staff-tag{
+  font-size:10px;font-weight:700;
+  padding:3px 10px;border-radius:20px;
+  background:var(--gold-pale);color:#854F0B;
+  border:1px solid var(--gold2);
+}
+
+/* ══════════════════════════════
+   SECTION 12: FINAL CTA
+══════════════════════════════ */
+.final-cta{
+  background:linear-gradient(160deg,#FFF5E0 0%,#FFFAF5 60%,#FFF0F5 100%);
+  padding:56px 16px 64px;text-align:center;
+  border-top:3px solid var(--gold2);
+}
+.final-cta-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(20px,5.5vw,28px);font-weight:800;
+  line-height:1.55;margin-bottom:8px;
+}
+.final-cta-title em{font-style:normal;color:var(--pink);}
+.final-cta-sub{font-size:13px;color:var(--text-soft);line-height:1.85;margin-bottom:24px;}
+.final-cta-box{
+  background:var(--white);border-radius:16px;
+  border:2px solid var(--gold2);
+  padding:24px 20px;max-width:400px;margin:0 auto 24px;
+  box-shadow:0 4px 20px rgba(212,160,23,.15);
+}
+.urgency{
+  display:inline-block;
+  background:var(--orange);color:#fff;
+  font-size:12px;font-weight:700;
+  padding:6px 18px;border-radius:20px;margin-bottom:16px;
+}
+.tel-block{margin-top:20px;font-size:13px;color:var(--text-soft);}
+.tel-num{
+  font-family:'Shippori Mincho',serif;
+  font-size:26px;font-weight:800;color:var(--text);
+  letter-spacing:.05em;display:block;margin:4px 0;
+  text-decoration:none;
+}
+.access-info{
+  margin-top:20px;font-size:12px;color:var(--text-soft);line-height:1.9;
+}
+
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+footer{
+  background:var(--text);color:rgba(255,255,255,.5);
+  padding:24px 16px;text-align:center;
+  font-size:10px;line-height:2;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(18px);}
+  to{opacity:1;transform:translateY(0);}
+}
 </style>
 </head>
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-grid">
-    <div class="hero-content">
-      <span class="hero-badge">朝霞台駅徒歩3分｜完全予約制</span>
-      <h1 class="hero-title">
-        運動しなくても<br>
-        <span>体型が変わる</span>理由がある。
-      </h1>
-      <p class="hero-subtitle">
-        代謝・体質・骨格を根本から整える<br>
-        柔道整復師による三位一体のボディメイク
-      </p>
-      <ul class="hero-points">
-        <li>食べてないのに太る、代謝が落ちた</li>
-        <li>体重は減っても体型がスッキリしない</li>
-        <li>お腹・腰まわりだけ落ちない</li>
-        <li>50代で何をやっても続かない</li>
-        <li>リバウンドを繰り返している</li>
-      </ul>
-      <a href="https://line.me/R/ti/p/@hzc8572m" class="btn-line">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.02 2 11c0 2.95 1.45 5.57 3.72 7.33L5 21l2.85-.75C9.08 20.72 10.5 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg>
-        LINEで無料カウンセリングを予約
-      </a>
-    </div>
-    <div class="hero-image">
-      <img
-        src="images/LP-040101.jpg"
-        alt="院長と母 スリムビューティー朝霞台"
-        style="
-          width: 100%;
-          max-width: 480px;
-          display: block;
-          margin: 0 auto;
-          background-color: #ffffff;
-          mix-blend-mode: normal;
-          opacity: 1;
-        "
-      >
+<!-- TOP STRIP -->
+<div class="top-strip">🎉 今なら無料カウンセリング受付中｜朝霞台駅南口 徒歩1分</div>
+
+<!-- ══════════════════════
+  SECTION 1: FIRSTVIEW
+══════════════════════ -->
+<section class="fv" id="top">
+  <div class="fv-badge">2014年開業 ／ 累計600名以上サポート実績</div>
+
+  <!-- ▼ 施術写真エリア（実際の写真に差し替えてください） -->
+  <div style="margin:0 0 20px;border-radius:12px;overflow:hidden;max-width:400px;margin-left:auto;margin-right:auto;position:relative;box-shadow:0 4px 20px rgba(0,0,0,.12);">
+    <img src="./images/fv-main.jpg"
+         alt="耳ツボ施術の様子・スリムビューティ朝霞台"
+         style="width:100%;height:220px;object-fit:cover;display:block;"
+         onerror="this.parentElement.style.display='none'">
+    <!-- 写真がない間のプレースホルダー -->
+    <div id="fv-img-placeholder" style="width:100%;height:220px;background:linear-gradient(135deg,#FFF1D6,#FFE0EC);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
+      <div style="font-size:40px;">👂</div>
+      <div style="font-size:13px;color:#854F0B;font-weight:700;">ここに施術・院内の写真を入れてください</div>
+      <div style="font-size:11px;color:#B07040;">./images/fv-main.jpg に置くと自動で表示されます</div>
     </div>
   </div>
-</section>
 
-<!-- TOKUTEN BANNER -->
-<div class="tokuten">
-  <div class="tokuten-inner">
-    <span class="tokuten-label">期間限定 特典</span>
-    <h2 class="tokuten-title">初回ご来院の方に<span>3つの無料特典</span>をご用意</h2>
-    <ul class="tokuten-list">
-      <li>✓ 無料カウンセリング（30分）</li>
-      <li>✓ 体質・骨格チェック 無料</li>
-      <li>✓ 耳ツボ体験施術 無料</li>
-    </ul>
-    <a href="https://line.me/R/ti/p/@hzc8572m" class="btn-line" style="font-size:15px;padding:16px 36px;">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.02 2 11c0 2.95 1.45 5.57 3.72 7.33L5 21l2.85-.75C9.08 20.72 10.5 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg>
-      LINEで特典を受け取る
+  <div class="fv-kv">
+    <div class="fv-kv-num">600<span class="fv-kv-unit">名以上</span></div>
+  </div>
+  <p class="fv-kv-label">耳ツボ×骨格矯正×栄養指導で変わった実績</p>
+
+  <h1 class="fv-title">
+    運動なし・食事制限なし<br>
+    <em>耳ツボで</em>体質から変わる
+  </h1>
+  <p class="fv-sub">
+    50代から変わった方が続出中<br>
+    耳ツボ × 骨格矯正 × 栄養指導 三位一体プログラム
+  </p>
+
+  <div class="fv-nums">
+    <div class="fv-num-box">
+      <div class="fv-num-val">−5kg</div>
+      <div class="fv-num-label">体重（平均）</div>
+    </div>
+    <div class="fv-num-box main">
+      <div class="fv-num-val">−8cm</div>
+      <div class="fv-num-label">ウエスト（平均）</div>
+    </div>
+    <div class="fv-num-box">
+      <div class="fv-num-val">3ヶ月</div>
+      <div class="fv-num-label">平均期間</div>
+    </div>
+  </div>
+
+  <div class="fv-checks">
+    <div class="fv-check-item">食欲が自然にコントロールできるようになった</div>
+    <div class="fv-check-item">朝のむくみ・冷えが改善された</div>
+    <div class="fv-check-item">リバウンドなしで体型をキープ中</div>
+  </div>
+
+  <div class="fv-cta">
+    <a href="https://line.me/R/ti/p/%40YOUR_LINE_ID" class="btn-line">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.7 1.28 5.12 3.31 6.79L4.5 21.5l3.9-1.95C9.53 19.83 10.74 20 12 20c5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
+      無料カウンセリングを予約する
     </a>
-    <p class="tokuten-note">※ 特典は予告なく終了する場合がございます</p>
+    <p class="fv-cta-note">完全予約制 ／ 女性スタッフ対応可 ／ 強引な勧誘なし</p>
   </div>
+
+  <div class="fv-profile">
+    <div class="fv-avatar">古</div>
+    <div>
+      <div class="fv-profile-name">古川 タケシ院長（柔道整復師）</div>
+      <div class="fv-profile-sub">タケシフルカワ整骨院 ／ 朝霞台駅南口 徒歩1分</div>
+    </div>
+  </div>
+</section>
+
+<!-- APPEAL BAR -->
+<div class="appeal-bar">
+  <div class="appeal-bar-title">「何をやっても変わらなかった」方が<br>続々と結果を出しています</div>
+  <div class="appeal-bar-sub">耳ツボ × 骨格矯正 × 栄養指導 三位一体プログラム</div>
 </div>
 
-<!-- PROBLEM -->
-<section class="problem">
-  <div class="section-inner">
-    <span class="section-label">Problem</span>
-    <h2 class="section-title">こんなお悩み、ありませんか？</h2>
-    <div class="problem-grid">
-      <div class="problem-item">
-        <div class="problem-num">01</div>
-        <p class="problem-text">食事制限や運動を頑張っても<strong>なかなか体型が変わらない</strong>、すぐリバウンドしてしまう</p>
+<!-- ══════════════════════
+  SECTION 2: PAIN（悩み）
+══════════════════════ -->
+<section class="section" style="background:var(--white);">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-eyebrow">こんなお悩みありませんか？</span>
+      <h2 class="section-title">最近、こんなことで<br><em>悩んでいませんか？</em></h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="pain-list">
+      <div class="pain-item reveal">
+        <span class="pain-icon">😔</span>
+        <p class="pain-text">食事を減らしても<strong>体重計の数字が変わらない</strong></p>
       </div>
-      <div class="problem-item">
-        <div class="problem-num">02</div>
-        <p class="problem-text">年齢とともに<strong>代謝が落ちて</strong>、若い頃と同じ生活なのに太りやすくなった</p>
+      <div class="pain-item reveal">
+        <span class="pain-icon">😴</span>
+        <p class="pain-text">朝起きた時から<strong>体が重くてだるい</strong></p>
       </div>
-      <div class="problem-item">
-        <div class="problem-num">03</div>
-        <p class="problem-text">子育てが落ち着いてきて、<strong>自分の身体を変えたい</strong>と思っているけど何から始めれば</p>
+      <div class="pain-item reveal">
+        <span class="pain-icon">👗</span>
+        <p class="pain-text">以前は着られた服が<strong>きつくなってきた</strong></p>
       </div>
-      <div class="problem-item">
-        <div class="problem-num">04</div>
-        <p class="problem-text">体重は落ちても<strong>体型がスッキリしない</strong>、洋服が似合わないと感じる</p>
+      <div class="pain-item reveal">
+        <span class="pain-icon">🔄</span>
+        <p class="pain-text">何度試しても<strong>すぐにリバウンドしてしまう</strong></p>
       </div>
+      <div class="pain-item reveal">
+        <span class="pain-icon">🤷</span>
+        <p class="pain-text"><strong>何をすれば痩せるのか</strong>もう分からない</p>
+      </div>
+    </div>
+
+    <div class="pain-bottom reveal">
+      もし一つでも当てはまるなら、<br>
+      それは<strong>体質そのものに原因があるかもしれません</strong>
     </div>
   </div>
 </section>
 
-<!-- MINI CTA 1 -->
-<div class="mini-cta">
-  <p class="mini-cta-text">そのお悩み、一度ご相談ください。<br>まずは無料カウンセリングから。</p>
-  <a href="https://line.me/R/ti/p/@hzc8572m" class="btn-line" style="font-size:15px;padding:16px 36px;">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.02 2 11c0 2.95 1.45 5.57 3.72 7.33L5 21l2.85-.75C9.08 20.72 10.5 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg>
-    LINEで無料相談する
-  </a>
-</div>
+<!-- ══════════════════════
+  SECTION 3: WHY（原因）
+══════════════════════ -->
+<section class="section why-section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-eyebrow">痩せにくい本当の理由</span>
+      <h2 class="section-title">50代から痩せにくいのは<br><em>あなたのせいではありません</em></h2>
+      <div class="divider"></div>
+    </div>
 
-<!-- BENEFITS -->
-<section class="benefits">
-  <div class="benefits-inner">
-    <p class="benefits-title">LINEを追加するだけで受け取れる3つの特典</p>
-    <div class="benefits-list">
-      <div class="benefits-item">
-        <span class="benefits-icon">📊</span>
-        <div class="benefits-text">
-          <strong>「あなたの体型が変わらない理由」</strong>
-          3分で分かる体質診断をLINEで無料送付
-        </div>
+    <div class="why-stats reveal">
+      <div class="why-stat">
+        <div class="why-stat-val">−30<span class="why-stat-unit">%</span></div>
+        <div class="why-stat-label">50代の基礎代謝は<br>20代比で約30%低下</div>
       </div>
-      <div class="benefits-item">
-        <span class="benefits-icon">📖</span>
-        <div class="benefits-text">
-          <strong>「50代から体型が変わった方法」</strong>
-          PDF資料を無料プレゼント
-        </div>
+      <div class="why-stat">
+        <div class="why-stat-val">50<span class="why-stat-unit">代〜</span></div>
+        <div class="why-stat-label">ホルモン変化で<br>食欲制御が困難に</div>
       </div>
-      <div class="benefits-item">
-        <span class="benefits-icon">💬</span>
-        <div class="benefits-text">
-          <strong>AIコーチ「スルルン」に今すぐ無料で相談できる</strong>
-          24時間いつでもLINEで気軽に相談OK
-        </div>
-      </div>
+    </div>
+
+    <div class="why-body reveal">
+      <p>50代を境に、基礎代謝は20代の約7割にまで低下し、同じ食事量でも体が処理しきれなくなります。</p>
+      <p>さらに深刻なのがホルモンバランスの変化。食欲のコントロールが難しくなり、腸内環境も乱れ、<strong>「食べていないのに体型が変わる」</strong>という悪循環に陥ります。</p>
+      <p>つまり、<strong>意志の力だけでは変われない体になっている</strong>のです。だからこそ、体の仕組みに合わせた正しいアプローチが必要です。</p>
     </div>
   </div>
 </section>
 
-<!-- WHY -->
-<section class="why">
-  <div class="section-inner">
-    <span class="section-label">Why Us</span>
-    <h2 class="section-title">スリムビューティー朝霞台が<br>選ばれる理由</h2>
-    <div class="why-cards">
-      <div class="why-card">
-        <span class="why-icon">👂</span>
-        <h3 class="why-card-title">耳ツボ施術</h3>
-        <p class="why-card-text">食欲・代謝・ホルモンバランスに関わるツボを刺激。身体の内側から変える施術です</p>
+<!-- ══════════════════════
+  SECTION 4: METHOD（方法）
+══════════════════════ -->
+<section class="section" style="background:var(--bg);">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-eyebrow">三位一体プログラム</span>
+      <h2 class="section-title">だから私たちは<br><em>3つのアプローチ</em>で変えます</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="method-cards">
+
+      <div class="method-card reveal">
+        <div class="method-card-top" style="background:linear-gradient(to right,#D4380D,#FF8050);"></div>
+        <div class="method-card-body">
+          <div class="method-num" style="color:#D4380D;">01</div>
+          <div class="method-text">
+            <h3>耳ツボ施術</h3>
+            <!-- ▼ 耳ツボ施術写真（./images/ear-tsubo.jpg に置いてください） -->
+            <div style="margin:10px 0 12px;border-radius:8px;overflow:hidden;position:relative;">
+              <img src="./images/ear-tsubo.jpg"
+                   alt="耳ツボ施術の様子"
+                   style="width:100%;height:160px;object-fit:cover;display:block;"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div style="display:none;width:100%;height:120px;background:#FFEEE8;align-items:center;justify-content:center;flex-direction:column;gap:4px;border-radius:8px;">
+                <div style="font-size:28px;">👂</div>
+                <div style="font-size:11px;color:#D4380D;font-weight:700;">耳ツボ施術の写真をここに</div>
+                <div style="font-size:10px;color:#B07060;">./images/ear-tsubo.jpg</div>
+              </div>
+            </div>
+            <p>耳には食欲や代謝に関わる重要なツボが集中しています。小さな金粒を耳のツボに貼るだけの痛くない施術で、食欲を自然に抑え代謝を高めます。自律神経も整い、ストレス食いを防止。</p>
+            <div class="method-tags">
+              <span class="method-tag" style="background:#FFEEE8;color:#D4380D;border:1px solid #FFB8A0;">痛みなし</span>
+              <span class="method-tag" style="background:#FFEEE8;color:#D4380D;border:1px solid #FFB8A0;">副作用なし</span>
+              <span class="method-tag" style="background:#FFEEE8;color:#D4380D;border:1px solid #FFB8A0;">食欲コントロール</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="why-card">
-        <span class="why-icon">🦴</span>
-        <h3 class="why-card-title">骨格矯正</h3>
-        <p class="why-card-text">歪んだ骨格を整えることで代謝が改善。体型そのものを美しく整えます</p>
+
+      <div class="method-card reveal">
+        <div class="method-card-top" style="background:linear-gradient(to right,var(--purple),#B090D8);"></div>
+        <div class="method-card-body">
+          <div class="method-num" style="color:var(--purple);">02</div>
+          <div class="method-text">
+            <h3>骨格矯正</h3>
+            <p>骨盤・脊柱の歪みを整えることで血流・リンパの流れを改善。むくみや冷えを解消しながら代謝が上がりやすい体に変えます。姿勢が整うことで見た目も大きく変わります。</p>
+            <div class="method-tags">
+              <span class="method-tag" style="background:var(--purple-light);color:var(--purple);border:1px solid #C9A8E0;">骨盤矯正</span>
+              <span class="method-tag" style="background:var(--purple-light);color:var(--purple);border:1px solid #C9A8E0;">むくみ改善</span>
+              <span class="method-tag" style="background:var(--purple-light);color:var(--purple);border:1px solid #C9A8E0;">姿勢改善</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="why-card">
-        <span class="why-icon">🥗</span>
-        <h3 class="why-card-title">栄養指導</h3>
-        <p class="why-card-text">個人の体質に合わせた食事アドバイス。無理な食事制限なしで体質改善</p>
+
+      <div class="method-card reveal">
+        <div class="method-card-top" style="background:linear-gradient(to right,var(--teal),#60C090);"></div>
+        <div class="method-card-body">
+          <div class="method-num" style="color:var(--teal);">03</div>
+          <div class="method-text">
+            <h3>栄養指導</h3>
+            <p>「食べない」のではなく「何を、どう食べるか」を変えるだけ。あなたの生活習慣・体質・好みに合わせた完全オーダーメイドの食事プランを提案。毎日の食事をLINEで気軽にサポートします。</p>
+            <div class="method-tags">
+              <span class="method-tag" style="background:var(--teal-light);color:var(--teal);border:1px solid #8ECFB0;">我慢なし</span>
+              <span class="method-tag" style="background:var(--teal-light);color:var(--teal);border:1px solid #8ECFB0;">LINEサポート</span>
+              <span class="method-tag" style="background:var(--teal-light);color:var(--teal);border:1px solid #8ECFB0;">リバウンドなし</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="why-card">
-        <span class="why-icon">🏥</span>
-        <h3 class="why-card-title">柔道整復師が担当</h3>
-        <p class="why-card-text">国家資格を持つ専門家が施術。安心・安全な施術で根本から変えます</p>
-      </div>
+
     </div>
   </div>
 </section>
 
-<!-- FEATURE -->
-<section class="feature">
-  <div class="section-inner">
-    <span class="section-label">Program</span>
-    <h2 class="section-title">三位一体プログラムの特長</h2>
-    <div class="feature-list">
-      <div class="feature-item">
-        <div class="feature-num">I</div>
-        <div class="feature-content">
-          <h3 class="feature-title"><span>耳ツボ</span>×代謝アップ</h3>
-          <p class="feature-desc">耳には全身のツボが集中しています。食欲を抑制し、代謝を高めるツボを的確に刺激することで、身体が自然と体質改善しやすい状態に変化していきます。柔道整復師の専門知識と技術による安心の施術です。</p>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-num">II</div>
-        <div class="feature-content">
-          <h3 class="feature-title"><span>骨格矯正</span>×体型改善</h3>
-          <p class="feature-desc">骨盤・背骨・肩甲骨の歪みが代謝低下・むくみ・体型崩れの原因になります。骨格を正しい位置に整えることで、体型が変わるだけでなく、リンパや血液の流れも改善。体質改善の土台をつくります。</p>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-num">III</div>
-        <div class="feature-content">
-          <h3 class="feature-title"><span>栄養指導</span>×体質改善</h3>
-          <p class="feature-desc">食事を極端に制限するのではなく、あなたの体質・生活リズムに合わせた食事の取り方をアドバイス。無理なく続けられる食生活の改善で、リバウンドしない身体づくりをサポートします。</p>
-        </div>
-      </div>
+<!-- ══════════════════════
+  SECTION 5: STEPS
+══════════════════════ -->
+<section class="section steps-section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-eyebrow">始め方はかんたん</span>
+      <h2 class="section-title">3ステップで始める<br><em>あなただけの体質改善</em></h2>
+      <div class="divider"></div>
     </div>
-  </div>
-</section>
 
-<!-- SENSEI -->
-<section class="sensei">
-  <div class="section-inner">
-    <span class="section-label">Expert</span>
-    <div class="sensei-inner">
-      <div class="sensei-photo">👨‍⚕️</div>
-      <div>
-        <div class="gold-line"></div>
-        <h3 class="sensei-name">古川 タケシ 院長</h3>
-        <p class="sensei-title">タケシフルカワ整骨院 院長</p>
-        <div class="sensei-license">
-          <span class="license-badge">柔道整復師</span>
-          <span class="license-badge">耳ツボ施術専門</span>
-          <span class="license-badge">骨格矯正</span>
-        </div>
-        <p class="sensei-text">
-          「本当に体型を変えたい方に、本物の施術を届けたい」という想いで、耳ツボ・骨格矯正・栄養指導を組み合わせた独自プログラムを開発。単に体重を落とすのではなく、体質から変えることで「リバウンドしない身体」をつくることを大切にしています。<br><br>
-          朝霞台地域の皆様に寄り添い、一人ひとりに合わせたオーダーメイドの施術を提供しています。
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VOICE -->
-<section class="voice">
-  <div class="section-inner">
-    <span class="section-label">Voice</span>
-    <h2 class="section-title">お客様の声</h2>
-    <div class="voice-grid">
-      <div class="voice-item">
-        <div class="voice-quote">"</div>
-        <p class="voice-text">50代でこんなに変われるとは思っていませんでした。子育てが終わって自分の時間ができ、思い切って来院。骨格から整えてもらって、体型が全然違います。</p>
-        <p class="voice-name">50代女性・主婦</p>
-      </div>
-      <div class="voice-item">
-        <div class="voice-quote">"</div>
-        <p class="voice-text">今まで色々なダイエットを試してきたけど、体質から変えるという考え方が新鮮でした。無理なく続けられて、3ヶ月で体型が変わりました。</p>
-        <p class="voice-name">47歳女性・パート</p>
-      </div>
-      <div class="voice-item">
-        <div class="voice-quote">"</div>
-        <p class="voice-text">耳ツボのことは半信半疑でしたが、施術後から食欲のコントロールがしやすくなりました。先生が丁寧に説明してくださるので安心して通えています。</p>
-        <p class="voice-name">52歳女性・会社員</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MINI CTA 2 -->
-<div class="mini-cta">
-  <p class="mini-cta-text">あなたも体質から変われます。<br>LINEから気軽にご相談ください。</p>
-  <a href="https://line.me/R/ti/p/@hzc8572m" class="btn-line" style="font-size:15px;padding:16px 36px;">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.02 2 11c0 2.95 1.45 5.57 3.72 7.33L5 21l2.85-.75C9.08 20.72 10.5 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg>
-    LINEで無料カウンセリングを予約
-  </a>
-</div>
-
-<!-- FLOW -->
-<section class="flow">
-  <div class="section-inner">
-    <span class="section-label">Flow</span>
-    <h2 class="section-title">ご来院の流れ</h2>
-    <div class="flow-steps">
-      <div class="flow-step">
-        <div class="flow-circle">1</div>
-        <div class="flow-content">
-          <h3 class="flow-content-title">LINEで無料カウンセリングを予約</h3>
-          <p class="flow-content-text">LINEから簡単にご予約いただけます。まずはお気軽にメッセージをお送りください。</p>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-circle" style="background:var(--green);">1</div>
+        <div class="step-content">
+          <h3>LINE登録・無料カウンセリング予約</h3>
+          <p>LINEで簡単な体質チェックを行います。あなたの生活習慣や目標をヒアリングし、最適なプランをご提案します。</p>
         </div>
       </div>
-      <div class="flow-step">
-        <div class="flow-circle">2</div>
-        <div class="flow-content">
-          <h3 class="flow-content-title">無料カウンセリング（約30分）</h3>
-          <p class="flow-content-text">現在のお悩みや目標をじっくりお聞きします。あなたに合ったプログラムをご提案します。費用のご説明もこの時に行います。</p>
+      <div class="step reveal">
+        <div class="step-circle" style="background:var(--orange);">2</div>
+        <div class="step-content">
+          <h3>耳ツボ施術 ＋ 栄養指導スタート</h3>
+          <p>耳ツボの施術（約15分・痛みなし）とあなた専用の食事プランをお渡し。日々の食事はLINEで気軽にサポートします。</p>
         </div>
       </div>
-      <div class="flow-step">
-        <div class="flow-circle">3</div>
-        <div class="flow-content">
-          <h3 class="flow-content-title">初回体験施術</h3>
-          <p class="flow-content-text">耳ツボ・骨格チェック・栄養カウンセリングを体験。施術後の変化を実感してください。</p>
-        </div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-circle">4</div>
-        <div class="flow-content">
-          <h3 class="flow-content-title">プログラム開始</h3>
-          <p class="flow-content-text">目標に向けて、オーダーメイドのプログラムでサポート。定期的に進捗を確認しながら進めます。</p>
+      <div class="step reveal">
+        <div class="step-circle" style="background:var(--purple);">3</div>
+        <div class="step-content">
+          <h3>定期フォロー ＆ 体質改善の実感</h3>
+          <p>2週間ごとの耳ツボ交換と栄養指導の見直し。多くの方が1ヶ月目から体の変化を実感されています。</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
-  <div class="cta-inner">
-    <span class="section-label" style="display:block;margin-bottom:16px;">Contact</span>
-    <h2 class="cta-title">まずは無料カウンセリングへ</h2>
-    <p class="cta-sub">
-      「本当に変われるかな？」という不安はご無用です。<br>
-      まずはお気軽にLINEでご相談ください。
-    </p>
-    <a href="https://line.me/R/ti/p/@hzc8572m”　class="btn-line" style="font-size:18px;padding:20px 48px;">
-      <svg viewBox="0 0 24 24" fill="currentColor" style="width:28px;height:28px;"><path d="M12 2C6.48 2 2 6.02 2 11c0 2.95 1.45 5.57 3.72 7.33L5 21l2.85-.75C9.08 20.72 10.5 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg>
+<!-- ══════════════════════
+  SECTION 6: VOICES（お客様の声）
+══════════════════════ -->
+<section class="section voices-section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-eyebrow">お客様の変化の記録</span>
+      <h2 class="section-title">栄養指導と耳ツボで<br><em>こんなに変わりました</em></h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="voice-cards">
+
+      <div class="voice-card reveal">
+        <div class="voice-head">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="voice-period">3ヶ月プログラム</span>
+            <span class="voice-profile">K.S様・52歳</span>
+          </div>
+        </div>
+        <div class="voice-nums">
+          <div class="v-num-box"><div class="v-num-label">ウエスト</div><div class="v-num-val" style="color:var(--gold);">−8.2<span class="v-num-unit">cm</span></div></div>
+          <div class="v-num-box main-num"><div class="v-num-label">体重変化</div><div class="v-num-val">−5.8<span class="v-num-unit">kg</span></div></div>
+          <div class="v-num-box"><div class="v-num-label">体脂肪</div><div class="v-num-val" style="color:var(--gold);">−4.1<span class="v-num-unit">%</span></div></div>
+        </div>
+        <div class="voice-changes">
+          <div class="v-change"><div class="v-check" style="background:var(--gold);">✓</div>耳ツボを始めてから自然と間食が減り、食欲が落ち着いた</div>
+          <div class="v-change"><div class="v-check" style="background:var(--gold);">✓</div>栄養指導で「食べていいもの」が分かりストレスなく続けられた</div>
+          <div class="v-change"><div class="v-check" style="background:var(--gold);">✓</div>友人から「何かしてる？」と聞かれるほど体型が変わった</div>
+        </div>
+        <div class="voice-quote">
+          <div class="voice-quote-inner">
+            <p class="voice-text">耳ツボを始めてから、自然と間食が減りました。栄養指導のおかげで「食べていいもの」が分かり、ストレスなく3ヶ月で体型が変わりました。友人から「何かしてる？」と聞かれるほどです。</p>
+            <p class="voice-name">K.S さん（52歳）</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card reveal">
+        <div class="voice-head">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="voice-period">2ヶ月プログラム</span>
+            <span class="voice-profile">M.T様・57歳</span>
+          </div>
+        </div>
+        <div class="voice-nums">
+          <div class="v-num-box"><div class="v-num-label">ウエスト</div><div class="v-num-val" style="color:var(--gold);">−6.5<span class="v-num-unit">cm</span></div></div>
+          <div class="v-num-box main-num"><div class="v-num-label">体重変化</div><div class="v-num-val">−4.2<span class="v-num-unit">kg</span></div></div>
+          <div class="v-num-box"><div class="v-num-label">体脂肪</div><div class="v-num-val" style="color:var(--gold);">−3.3<span class="v-num-unit">%</span></div></div>
+        </div>
+        <div class="voice-changes">
+          <div class="v-change"><div class="v-check" style="background:var(--gold);">✓</div>今まで色々試したが、初めて無理なく続けられた</div>
+          <div class="v-change"><div class="v-check" style="background:var(--gold);">✓</div>耳ツボで食欲が落ち着き「何を食べるか」が明確になった</div>
+          <div class="v-change"><div class="v-check" style="background:var(--gold);">✓</div>リバウンドなし、終了から半年後も体型をキープ中</div>
+        </div>
+        <div class="voice-quote">
+          <div class="voice-quote-inner">
+            <p class="voice-text">今まで色々なダイエットを試しましたが、どれも続きませんでした。耳ツボで食欲が落ち着き、栄養指導で「何を食べるか」が明確になったので、初めて無理なく続けられています。</p>
+            <p class="voice-name">M.T さん（57歳）</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card reveal">
+        <div class="voice-head">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="voice-period">1ヶ月プログラム</span>
+            <span class="voice-profile">Y.A様・54歳</span>
+          </div>
+        </div>
+        <div class="voice-nums">
+          <div class="v-num-box"><div class="v-num-label">ウエスト</div><div class="v-num-val" style="color:var(--gold);">−4.8<span class="v-num-unit">cm</span></div></div>
+          <div class="v-num-box main-num"><div class="v-num-label">体重変化</div><div class="v-num-val">−2.9<span class="v-num-unit">kg</span></div></div>
+          <div class="v-num-box"><div class="v-num-label">体脂肪</div><div class="v-num-val" style="color:var(--gold);">−2.1<span class="v-num-unit">%</span></div></div>
+        </div>
+        <div class="voice-changes">
+          <div class="v-change"><div class="v-check" style="background:var(--gold);">✓</div>耳ツボは痛くないし貼っているだけで続けやすい</div>
+          <div class="v-change"><div class="v-check" style="background:var(--gold);">✓</div>「これを食べて」と具体的に教えてもらえるので迷わない</div>
+          <div class="v-change"><div class="v-check" style="background:var(--gold);">✓</div>体が軽くなって朝の目覚めが全然違う</div>
+        </div>
+        <div class="voice-quote">
+          <div class="voice-quote-inner">
+            <p class="voice-text">耳ツボは痛くないし、貼っているだけ。栄養指導も「これを食べて」と具体的に教えてもらえるので迷いません。体が軽くなって、朝の目覚めが全然違います。</p>
+            <p class="voice-name">Y.A さん（54歳）</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="voice-note reveal">※ 個人の感想であり、効果・効能を保証するものではありません。結果には個人差があります。</p>
+  </div>
+</section>
+
+<!-- MID CTA -->
+<div style="background:var(--white);padding:32px 16px;text-align:center;">
+  <div style="max-width:400px;margin:0 auto;">
+    <p style="font-size:13px;color:var(--text-soft);margin-bottom:12px;">まずは無料カウンセリングから</p>
+    <a href="https://line.me/R/ti/p/%40YOUR_LINE_ID" class="btn-line">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.7 1.28 5.12 3.31 6.79L4.5 21.5l3.9-1.95C9.53 19.83 10.74 20 12 20c5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
       LINEで無料カウンセリングを予約する
     </a>
-    <p class="cta-note">※ 完全予約制・勧誘等は一切ございません</p>
+    <p style="font-size:10px;color:var(--text-soft);margin-top:8px;">強引な勧誘は一切しません</p>
+  </div>
+</div>
+
+<!-- ══════════════════════
+  SECTION 7: 年代別BA
+══════════════════════ -->
+<section class="section age-section" id="ba-section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-eyebrow">年代別 体の変化の記録</span>
+      <h2 class="section-title">あなたと<em>同じ年代</em>の<br>変化の記録を見る</h2>
+      <div class="divider"></div>
+      <p style="font-size:13px;color:var(--text-soft);margin-top:12px;">タップするだけで同じ年代のリアルな変化が確認できます</p>
+    </div>
+
+    <div class="age-cards">
+
+      <!-- 50代カード -->
+      <div class="age-card reveal" data-age="50">
+        <div class="age-top-bar"></div>
+        <span class="hot-tag">🔥 一番人気</span>
+        <div class="age-card-inner">
+          <div class="age-circle">
+            <span class="age-num">50</span>
+            <span class="age-dai">代</span>
+          </div>
+          <div class="age-card-text">
+            <div class="age-card-title">50代の成功事例</div>
+            <div class="age-card-desc">更年期・代謝低下・骨盤の歪み<br>この年代の悩みに特化したアプローチ</div>
+            <div class="age-pills" style="margin-bottom:10px;">
+              <span class="age-pill">体重変化あり</span>
+              <span class="age-pill">ウエストすっきり</span>
+            </div>
+            <a href="./ba-50.html" class="age-detail-btn" style="display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#fff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;transition:filter .2s;">
+              ビフォーアフターを見る →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 40代カード -->
+      <div class="age-card reveal" data-age="40">
+        <div class="age-top-bar"></div>
+        <div class="age-card-inner">
+          <div class="age-circle">
+            <span class="age-num">40</span>
+            <span class="age-dai">代</span>
+          </div>
+          <div class="age-card-text">
+            <div class="age-card-title">40代の成功事例</div>
+            <div class="age-card-desc">ホルモン変化・むくみ・体型の崩れ<br>40代特有のアプローチで変わった記録</div>
+            <div class="age-pills" style="margin-bottom:10px;">
+              <span class="age-pill">体重変化あり</span>
+              <span class="age-pill">むくみ改善</span>
+            </div>
+            <a href="./ba-40.html" class="age-detail-btn" style="display:inline-flex;align-items:center;gap:6px;background:var(--purple);color:#fff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;transition:filter .2s;">
+              ビフォーアフターを見る →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 30代カード -->
+      <div class="age-card reveal" data-age="30">
+        <div class="age-top-bar"></div>
+        <div class="age-card-inner">
+          <div class="age-circle">
+            <span class="age-num">30</span>
+            <span class="age-dai">代</span>
+          </div>
+          <div class="age-card-text">
+            <div class="age-card-title">30代の成功事例</div>
+            <div class="age-card-desc">産後・育児・仕事で後回しにしてきた体<br>忙しくても続けられたアプローチ</div>
+            <div class="age-pills" style="margin-bottom:10px;">
+              <span class="age-pill">産後体型改善</span>
+              <span class="age-pill">体脂肪ダウン</span>
+            </div>
+            <a href="./ba-30.html" class="age-detail-btn" style="display:inline-flex;align-items:center;gap:6px;background:var(--teal);color:#fff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;transition:filter .2s;">
+              ビフォーアフターを見る →
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="voice-note reveal" style="margin-top:16px;">※ 掲載の体験談は個人の感想です。効果・効能を保証するものではありません。</p>
   </div>
 </section>
 
-<!-- MAP -->
-<div class="map-section">
-  <div class="map-inner">
-    <span class="section-label">Access</span>
-    <div class="map-info">
-      <div class="map-detail">
-        <strong>院名</strong>
-        タケシフルカワ整骨院<br>スリムビューティー朝霞台
+<!-- ══ AGE DETAIL OVERLAYS ══ -->
+
+<!-- 50代 -->
+<div class="age-detail" id="detail-50">
+  <div class="age-detail-header">
+    <button class="back-btn" onclick="closeDetail()">← 戻る</button>
+    <span class="detail-label" style="color:var(--gold);">🌟 50代の変化の記録</span>
+  </div>
+  <div class="detail-hero">
+    <div class="detail-eyebrow" style="background:var(--gold-pale);color:var(--gold);border:1.5px solid var(--gold2);">🌟 50代 CHANGE RECORD</div>
+    <h2 class="detail-hero-title">「何をやっても変わらない」<br>そう思っていた<span style="color:var(--gold);">50代</span>の方たちが<br>変わった記録です</h2>
+    <p class="detail-hero-sub">更年期・代謝低下・骨盤の歪み<br>体の仕組みから整えた結果です</p>
+  </div>
+  <div class="detail-cases">
+    <div class="d-case">
+      <div class="d-case-head">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="d-case-num" style="background:var(--gold-pale);color:var(--gold);border:1px solid var(--gold2);">CASE 01</span>
+          <span class="d-case-profile">M.K様・54歳・朝霞市</span>
+        </div>
+        <span class="d-case-period">3ヶ月</span>
       </div>
-      <div class="map-detail">
-        <strong>アクセス</strong>
-        東武東上線・JR武蔵野線<br>朝霞台駅・北朝霞駅 徒歩3分
+      <div class="d-sil-row">
+        <div class="d-sil-col">
+          <svg width="54" height="100" viewBox="0 0 54 100"><ellipse cx="27" cy="14" rx="11" ry="11" fill="#ddd"/><path d="M6 41Q4 32 14 29Q20 27 27 27Q34 27 40 29Q50 32 48 41Q51 59 49 79Q47 97 27 99Q7 97 5 79Q3 59 6 41Z" fill="#e0e0e0" stroke="#ccc" stroke-width="1"/><ellipse cx="27" cy="59" rx="19" ry="14" fill="#d4d4d4"/></svg>
+          <span class="sil-lbl before">BEFORE</span>
+        </div>
+        <div class="d-sil-arrow">→</div>
+        <div class="d-sil-col">
+          <svg width="54" height="100" viewBox="0 0 54 100"><ellipse cx="27" cy="14" rx="10" ry="10" fill="#F5C842"/><path d="M14 40Q13 31 20 28Q24 26 27 26Q30 26 34 28Q41 31 40 40Q42 57 40 77Q38 95 27 97Q16 95 14 77Q12 57 14 40Z" fill="rgba(212,160,23,.1)" stroke="var(--gold)" stroke-width="1.5"/></svg>
+          <span class="sil-lbl" style="background:var(--gold-pale);color:var(--gold);border:1px solid var(--gold2);">AFTER</span>
+        </div>
       </div>
-      <div class="map-detail">
-        <strong>営業時間</strong>
-        月〜土 9:00〜19:00<br>日・祝 休診
+      <div class="d-nums">
+        <div class="d-num-box"><div class="d-num-label">ウエスト</div><div class="d-num-val" style="color:var(--gold);">−8.2<span class="d-num-unit">cm</span></div></div>
+        <div class="d-num-box main"><div class="d-num-label">体重変化</div><div class="d-num-val">−5.8<span class="d-num-unit">kg</span></div></div>
+        <div class="d-num-box"><div class="d-num-label">体脂肪</div><div class="d-num-val" style="color:var(--gold);">−4.1<span class="d-num-unit">%</span></div></div>
       </div>
-      <div class="map-detail">
-        <strong>予約方法</strong>
-        LINEにて完全予約制<br>当日予約も可（空き状況による）
+      <div class="d-changes">
+        <div class="d-change"><div class="d-chk" style="background:var(--gold);">✓</div>3週目から朝のむくみが消え、顔のラインがシャープになった</div>
+        <div class="d-change"><div class="d-chk" style="background:var(--gold);">✓</div>耳ツボ施術後から食欲が自然とコントロールできるようになった</div>
+        <div class="d-change"><div class="d-chk" style="background:var(--gold);">✓</div>姿勢が改善し、同年代から「若くなった？」と言われた</div>
       </div>
+      <div class="d-voice"><div class="d-voice-inner"><p class="d-voice-text">子育てが落ち着いて自分の体を見直したかった。まさか50代でこんなに変化があるとは。体の仕組みから変えてもらった感覚です</p><p class="d-voice-name">M.K様 ／ 54歳 ／ 朝霞市在住</p></div></div>
     </div>
-    <div class="map-embed">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3235.123456789!2d139.6!3d35.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z5YyX5pqs5Y-k5pW05qCh5qmf6aa8!5e0!3m2!1sja!2sjp!4v1234567890"
-        allowfullscreen=""
-        loading="lazy">
-      </iframe>
+    <div class="d-case">
+      <div class="d-case-head">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="d-case-num" style="background:var(--gold-pale);color:var(--gold);border:1px solid var(--gold2);">CASE 02</span>
+          <span class="d-case-profile">Y.T様・57歳・新座市</span>
+        </div>
+        <span class="d-case-period">2ヶ月</span>
+      </div>
+      <div class="d-sil-row">
+        <div class="d-sil-col">
+          <svg width="54" height="100" viewBox="0 0 54 100"><ellipse cx="27" cy="14" rx="11" ry="11" fill="#ddd"/><path d="M7 42Q5 33 15 30Q21 28 27 28Q33 28 39 30Q49 33 47 42Q50 60 48 80Q46 98 27 100Q8 98 6 80Q4 60 7 42Z" fill="#e0e0e0" stroke="#ccc" stroke-width="1"/></svg>
+          <span class="sil-lbl before">BEFORE</span>
+        </div>
+        <div class="d-sil-arrow">→</div>
+        <div class="d-sil-col">
+          <svg width="54" height="100" viewBox="0 0 54 100"><ellipse cx="27" cy="14" rx="10" ry="10" fill="#F5C842"/><path d="M14 41Q13 32 20 29Q24 27 27 27Q30 27 34 29Q41 32 40 41Q42 58 40 78Q38 96 27 98Q16 96 14 78Q12 58 14 41Z" fill="rgba(212,160,23,.1)" stroke="var(--gold)" stroke-width="1.5"/></svg>
+          <span class="sil-lbl" style="background:var(--gold-pale);color:var(--gold);border:1px solid var(--gold2);">AFTER</span>
+        </div>
+      </div>
+      <div class="d-nums">
+        <div class="d-num-box"><div class="d-num-label">ウエスト</div><div class="d-num-val" style="color:var(--gold);">−6.5<span class="d-num-unit">cm</span></div></div>
+        <div class="d-num-box main"><div class="d-num-label">体重変化</div><div class="d-num-val">−4.2<span class="d-num-unit">kg</span></div></div>
+        <div class="d-num-box"><div class="d-num-label">体脂肪</div><div class="d-num-val" style="color:var(--gold);">−3.3<span class="d-num-unit">%</span></div></div>
+      </div>
+      <div class="d-changes">
+        <div class="d-change"><div class="d-chk" style="background:var(--gold);">✓</div>更年期の代謝低下が原因と判明。体質に合った栄養指導で改善</div>
+        <div class="d-change"><div class="d-chk" style="background:var(--gold);">✓</div>骨格の歪みを整えることで血流が改善し冷えが緩和された</div>
+        <div class="d-change"><div class="d-chk" style="background:var(--gold);">✓</div>リバウンドなし。終了から半年後も体型をキープ中</div>
+      </div>
+      <div class="d-voice"><div class="d-voice-inner"><p class="d-voice-text">更年期で代謝が落ちてからずっと悩んでいました。ここは体の原因から見てくれるから違う。数字より体の軽さが全然違います</p><p class="d-voice-name">Y.T様 ／ 57歳 ／ 新座市在住</p></div></div>
     </div>
   </div>
+  <div class="detail-cta-wrap">
+    <div class="detail-cta-box">
+      <div class="detail-cta-inner">
+        <h3 class="detail-cta-title">50代からでも<br><span style="color:var(--pink);">体は必ず変わります</span></h3>
+        <p class="detail-cta-sub">まずは無料の体質診断から。<br>カウンセリング・体質診断は完全無料です。</p>
+        <div class="no-sales" style="margin-bottom:16px;">✓ しつこい営業・勧誘は一切しません</div>
+        <a href="https://line.me/R/ti/p/%40YOUR_LINE_ID" class="btn-line"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.7 1.28 5.12 3.31 6.79L4.5 21.5l3.9-1.95C9.53 19.83 10.74 20 12 20c5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>LINEで無料カウンセリングを予約する</a>
+      </div>
+      <div class="detail-cta-notes">
+        <span class="cta-note-item">10秒で登録完了</span>
+        <span class="cta-note-item">個人情報不要</span>
+        <span class="cta-note-item">いつでもブロック可</span>
+      </div>
+    </div>
+  </div>
+  <p class="detail-disclaimer">※ 個人の感想であり、効果・効能を保証するものではありません。結果には個人差があります。</p>
 </div>
+
+<!-- 40代 -->
+<div class="age-detail" id="detail-40">
+  <div class="age-detail-header">
+    <button class="back-btn" onclick="closeDetail()">← 戻る</button>
+    <span class="detail-label" style="color:var(--purple);">💜 40代の変化の記録</span>
+  </div>
+  <div class="detail-hero">
+    <div class="detail-eyebrow" style="background:var(--purple-light);color:var(--purple);border:1.5px solid #C9A8E0;">💜 40代 CHANGE RECORD</div>
+    <h2 class="detail-hero-title">「以前と同じ生活なのに<br>体型が変わってきた」<br><span style="color:var(--purple);">40代</span>の方たちの変化の記録</h2>
+    <p class="detail-hero-sub">ホルモン変化・むくみ・骨盤の乱れ<br>40代特有の悩みに合わせたアプローチです</p>
+  </div>
+  <div class="detail-cases">
+    <div class="d-case">
+      <div class="d-case-head">
+        <div style="display:flex;align-items:center;gap:8px;"><span class="d-case-num" style="background:var(--purple-light);color:var(--purple);border:1px solid #C9A8E0;">CASE 01</span><span class="d-case-profile">K.S様・46歳・志木市</span></div>
+        <span class="d-case-period">3ヶ月</span>
+      </div>
+      <div class="d-sil-row">
+        <div class="d-sil-col"><svg width="54" height="100" viewBox="0 0 54 100"><ellipse cx="27" cy="14" rx="11" ry="11" fill="#ddd"/><path d="M8 42Q6 33 16 30Q22 28 27 28Q32 28 38 30Q48 33 46 42Q49 60 47 80Q45 98 27 100Q9 98 7 80Q5 60 8 42Z" fill="#e0e0e0" stroke="#ccc" stroke-width="1"/><ellipse cx="27" cy="58" rx="17" ry="13" fill="#d4d4d4"/></svg><span class="sil-lbl before">BEFORE</span></div>
+        <div class="d-sil-arrow" style="color:var(--purple);">→</div>
+        <div class="d-sil-col"><svg width="54" height="100" viewBox="0 0 54 100"><ellipse cx="27" cy="14" rx="10" ry="10" fill="#C9A8E0"/><path d="M13 40Q12 31 19 28Q23 26 27 26Q31 26 35 28Q42 31 41 40Q43 57 41 77Q39 95 27 97Q15 95 13 77Q11 57 13 40Z" fill="rgba(123,94,167,.08)" stroke="var(--purple)" stroke-width="1.5"/></svg><span class="sil-lbl" style="background:var(--purple-light);color:var(--purple);border:1px solid #C9A8E0;">AFTER</span></div>
+      </div>
+      <div class="d-nums">
+        <div class="d-num-box"><div class="d-num-label">ウエスト</div><div class="d-num-val" style="color:var(--purple);">−7.8<span class="d-num-unit">cm</span></div></div>
+        <div class="d-num-box main"><div class="d-num-label">体重変化</div><div class="d-num-val">−5.1<span class="d-num-unit">kg</span></div></div>
+        <div class="d-num-box"><div class="d-num-label">体脂肪</div><div class="d-num-val" style="color:var(--purple);">−3.8<span class="d-num-unit">%</span></div></div>
+      </div>
+      <div class="d-changes">
+        <div class="d-change"><div class="d-chk" style="background:var(--purple);">✓</div>夕方のひどい足のむくみが2週間目から明らかに改善した</div>
+        <div class="d-change"><div class="d-chk" style="background:var(--purple);">✓</div>耳ツボで甘いものへの衝動が自然と落ち着いた</div>
+        <div class="d-change"><div class="d-chk" style="background:var(--purple);">✓</div>骨盤矯正後、腰の重だるさが消えて座り姿勢が変わった</div>
+      </div>
+      <div class="d-voice"><div class="d-voice-inner"><p class="d-voice-text">40代になってから何をやっても続かなかった。ここは体の原因から見てくれるので我慢ゼロで続けられました。むくみがなくなって顔も変わりました</p><p class="d-voice-name">K.S様 ／ 46歳 ／ 志木市在住</p></div></div>
+    </div>
+    <div class="d-case">
+      <div class="d-case-head">
+        <div style="display:flex;align-items:center;gap:8px;"><span class="d-case-num" style="background:var(--purple-light);color:var(--purple);border:1px solid #C9A8E0;">CASE 02</span><span class="d-case-profile">N.H様・43歳・朝霞市</span></div>
+        <span class="d-case-period">2ヶ月</span>
+      </div>
+      <div class="d-sil-row">
+        <div class="d-sil-col"><svg width="54" height="100" viewBox="0 0 54 100"><ellipse cx="27" cy="14" rx="11" ry="11" fill="#ddd"/><path d="M9 43Q7 34 17 31Q23 29 27 29Q31 29 37 31Q47 34 45 43Q48 61 46 81Q44 99 27 101Q10 99 8 81Q6 61 9 43Z" fill="#e0e0e0" stroke="#ccc" stroke-width="1"/></svg><span class="sil-lbl before">BEFORE</span></div>
+        <div class="d-sil-arrow" style="color:var(--purple);">→</div>
+        <div class="d-sil-col"><svg width="54" height="100" viewBox="0 0 54 100"><ellipse cx="27" cy="14" rx="10" ry="10" fill="#C9A8E0"/><path d="M14 41Q13 32 20 29Q24 27 27 27Q30 27 34 29Q41 32 40 41Q42 58 40 78Q38 96 27 98Q16 96 14 78Q12 58 14 41Z" fill="rgba(123,94,167,.08)" stroke="var(--purple)" stroke-width="1.5"/></svg><span class="sil-lbl" style="background:var(--purple-light);color:var(--purple);border:1px solid #C9A8E0;">AFTER</span></div>
+      </div>
+      <div class="d-nums">
+        <div class="d-num-box"><div class="d-num-label">ウエスト</div><div class="d-num-val" style="color:var(--purple);">−5.9<span class="d-num-unit">cm</span></div></div>
+        <div class="d-num-box main"><div class="d-num-label">体重変化</div><div class="d-num-val">−3.8<span class="d-num-unit">kg</span></div></div>
+        <div class="d-num-box"><div class="d-num-label">体脂肪</div><div class="d-num-val" style="color:var(--purple);">−2.9<span class="d-num-unit">%</span></div></div>
+      </div>
+      <div class="d-changes">
+        <div class="d-change"><div class="d-chk" style="background:var(--purple);">✓</div>栄養指導で「食べ方」が変わり制限なしで体重が落ちた</div>
+        <div class="d-change"><div class="d-chk" style="background:var(--purple);">✓</div>冷えが改善されて寝つきが良くなり朝スッキリ起きられるように</div>
+        <div class="d-change"><div class="d-chk" style="background:var(--purple);">✓</div>服のサイズが1サイズ落ち、以前の服が入るようになった</div>
+      </div>
+      <div class="d-voice"><div class="d-voice-inner"><p class="d-voice-text">仕事も育児もあって自分のことを後回しにしてきました。体質から変えるという考え方が新鮮で、2ヶ月でここまで変われるとは思いませんでした</p><p class="d-voice-name">N.H様 ／ 43歳 ／ 朝霞市在住</p></div></div>
+    </div>
+  </div>
+  <div class="detail-cta-wrap">
+    <div class="detail-cta-box">
+      <div class="detail-cta-inner">
+        <h3 class="detail-cta-title">40代からでも<br><span style="color:var(--pink);">体は必ず変わります</span></h3>
+        <p class="detail-cta-sub">まずは無料の体質診断から。<br>カウンセリング・体質診断は完全無料です。</p>
+        <div class="no-sales" style="margin-bottom:16px;">✓ しつこい営業・勧誘は一切しません</div>
+        <a href="https://line.me/R/ti/p/%40YOUR_LINE_ID" class="btn-line" style="background:#7B5EA7;"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.7 1.28 5.12 3.31 6.79L4.5 21.5l3.9-1.95C9.53 19.83 10.74 20 12 20c5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>LINEで無料カウンセリングを予約する</a>
+      </div>
+      <div class="detail-cta-notes">
+        <span class="cta-note-item">10秒で登録完了</span><span class="cta-note-item">個人情報不要</span><span class="cta-note-item">いつでもブロック可</span>
+      </div>
+    </div>
+  </div>
+  <p class="detail-disclaimer">※ 個人の感想であり、効果・効能を保証するものではありません。結果には個人差があります。</p>
+</div>
+
+<!-- 30代 -->
+<div class="age-detail" id="detail-30">
+  <div class="age-detail-header">
+    <button class="back-btn" onclick="closeDetail()">← 戻る</button>
+    <span class="detail-label" style="color:var(--teal);">🌿 30代の変化の記録</span>
+  </div>
+  <div class="detail-hero">
+    <div class="detail-eyebrow" style="background:var(--teal-light);color:var(--teal);border:1.5px solid #8ECFB0;">🌿 30代 CHANGE RECORD</div>
+    <h2 class="detail-hero-title">「産後から戻らない」<br>「育児・仕事で後回しに」<br><span style="color:var(--teal);">30代</span>の方たちの変化の記録</h2>
+    <p class="detail-hero-sub">産後体型・疲れからくる代謝低下<br>忙しい30代でも続けられたアプローチです</p>
+  </div>
+  <div class="detail-cases">
+    <div class="d-case">
+      <div class="d-case-head">
+        <div style="display:flex;align-items:center;gap:8px;"><span class="d-case-num" style="background:var(--teal-light);color:var(--teal);border:1px solid #8ECFB0;">CASE 01</span><span class="d-case-profile">A.M様・36歳・和光市</span></div>
+        <span class="d-case-period">3ヶ月</span>
+      </div>
+      <div class="d-sil-row">
+        <div class="d-sil-col"><svg width="54" height="100" viewBox="0 0 54 100"><ellipse cx="27" cy="14" rx="11" ry="11" fill="#ddd"/><path d="M7 41Q5 32 15 29Q21 27 27 27Q33 27 39 29Q49 32 47 41Q50 59 48 79Q46 97 27 99Q8 97 6 79Q4 59 7 41Z" fill="#e0e0e0" stroke="#ccc" stroke-width="1"/><ellipse cx="27" cy="60" rx="18" ry="13" fill="#d4d4d4"/></svg><span class="sil-lbl before">BEFORE</span></div>
+        <div class="d-sil-arrow" style="color:var(--teal);">→</div>
+        <div class="d-sil-col"><svg width="54" height="100" viewBox="0 0 54 100"><ellipse cx="27" cy="14" rx="10" ry="10" fill="#8ECFB0"/><path d="M13 40Q12 31 19 28Q23 26 27 26Q31 26 35 28Q42 31 41 40Q43 57 41 77Q39 95 27 97Q15 95 13 77Q11 57 13 40Z" fill="rgba(46,158,107,.07)" stroke="var(--teal)" stroke-width="1.5"/></svg><span class="sil-lbl" style="background:var(--teal-light);color:var(--teal);border:1px solid #8ECFB0;">AFTER</span></div>
+      </div>
+      <div class="d-nums">
+        <div class="d-num-box"><div class="d-num-label">ウエスト</div><div class="d-num-val" style="color:var(--teal);">−9.1<span class="d-num-unit">cm</span></div></div>
+        <div class="d-num-box main"><div class="d-num-label">体重変化</div><div class="d-num-val">−6.3<span class="d-num-unit">kg</span></div></div>
+        <div class="d-num-box"><div class="d-num-label">体脂肪</div><div class="d-num-val" style="color:var(--teal);">−5.2<span class="d-num-unit">%</span></div></div>
+      </div>
+      <div class="d-changes">
+        <div class="d-change"><div class="d-chk" style="background:var(--teal);">✓</div>産後から戻らなかったお腹まわりが骨盤矯正で劇的に変化した</div>
+        <div class="d-change"><div class="d-chk" style="background:var(--teal);">✓</div>耳ツボで夜中の食欲がなくなり育児疲れからの過食が改善</div>
+        <div class="d-change"><div class="d-chk" style="background:var(--teal);">✓</div>骨盤が整って姿勢も改善、体重より体型の変化を実感</div>
+      </div>
+      <div class="d-voice"><div class="d-voice-inner"><p class="d-voice-text">第二子の産後から3年間ずっと体型が戻らなかった。骨盤の問題だったと分かって矯正を始めたら、別人みたいに変わりました</p><p class="d-voice-name">A.M様 ／ 36歳 ／ 和光市在住</p></div></div>
+    </div>
+    <div class="d-case">
+      <div class="d-case-head">
+        <div style="display:flex;align-items:center;gap:8px;"><span class="d-case-num" style="background:var(--teal-light);color:var(--teal);border:1px solid #8ECFB0;">CASE 02</span><span class="d-case-profile">R.K様・38歳・朝霞市</span></div>
+        <span class="d-case-period">2ヶ月</span>
+      </div>
+      <div class="d-sil-row">
+        <div class="d-sil-col"><svg width="54" height="100" viewBox="0 0 54 100"><ellipse cx="27" cy="14" rx="11" ry="11" fill="#ddd"/><path d="M8 43Q6 34 16 31Q22 29 27 29Q32 29 38 31Q48 34 46 43Q49 61 47 81Q45 99 27 101Q9 99 7 81Q5 61 8 43Z" fill="#e0e0e0" stroke="#ccc" stroke-width="1"/></svg><span class="sil-lbl before">BEFORE</span></div>
+        <div class="d-sil-arrow" style="color:var(--teal);">→</div>
+        <div class="d-sil-col"><svg width="54" height="100" viewBox="0 0 54 100"><ellipse cx="27" cy="14" rx="10" ry="10" fill="#8ECFB0"/><path d="M14 41Q13 32 20 29Q24 27 27 27Q30 27 34 29Q41 32 40 41Q42 58 40 78Q38 96 27 98Q16 96 14 78Q12 58 14 41Z" fill="rgba(46,158,107,.07)" stroke="var(--teal)" stroke-width="1.5"/></svg><span class="sil-lbl" style="background:var(--teal-light);color:var(--teal);border:1px solid #8ECFB0;">AFTER</span></div>
+      </div>
+      <div class="d-nums">
+        <div class="d-num-box"><div class="d-num-label">ウエスト</div><div class="d-num-val" style="color:var(--teal);">−6.8<span class="d-num-unit">cm</span></div></div>
+        <div class="d-num-box main"><div class="d-num-label">体重変化</div><div class="d-num-val">−4.5<span class="d-num-unit">kg</span></div></div>
+        <div class="d-num-box"><div class="d-num-label">体脂肪</div><div class="d-num-val" style="color:var(--teal);">−3.6<span class="d-num-unit">%</span></div></div>
+      </div>
+      <div class="d-changes">
+        <div class="d-change"><div class="d-chk" style="background:var(--teal);">✓</div>仕事のストレス食いが耳ツボを始めてから自然になくなった</div>
+        <div class="d-change"><div class="d-chk" style="background:var(--teal);">✓</div>LINEサポートがあるので忙しくても続けられた</div>
+        <div class="d-change"><div class="d-chk" style="background:var(--teal);">✓</div>体重より先に顔・首まわりがすっきりして周りから気づかれた</div>
+      </div>
+      <div class="d-voice"><div class="d-voice-inner"><p class="d-voice-text">フルタイムで働きながら続けられるか不安でしたが、LINEサポートがあるので隙間時間で相談できた。忙しい人にこそ向いていると思います</p><p class="d-voice-name">R.K様 ／ 38歳 ／ 朝霞市在住</p></div></div>
+    </div>
+  </div>
+  <div class="detail-cta-wrap">
+    <div class="detail-cta-box">
+      <div class="detail-cta-inner">
+        <h3 class="detail-cta-title">30代からでも<br><span style="color:var(--pink);">体は必ず変わります</span></h3>
+        <p class="detail-cta-sub">まずは無料の体質診断から。<br>カウンセリング・体質診断は完全無料です。</p>
+        <div class="no-sales" style="margin-bottom:16px;">✓ しつこい営業・勧誘は一切しません</div>
+        <a href="https://line.me/R/ti/p/%40YOUR_LINE_ID" class="btn-line" style="background:#2E9E6B;"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.7 1.28 5.12 3.31 6.79L4.5 21.5l3.9-1.95C9.53 19.83 10.74 20 12 20c5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>LINEで無料カウンセリングを予約する</a>
+      </div>
+      <div class="detail-cta-notes">
+        <span class="cta-note-item">10秒で登録完了</span><span class="cta-note-item">個人情報不要</span><span class="cta-note-item">いつでもブロック可</span>
+      </div>
+    </div>
+  </div>
+  <p class="detail-disclaimer">※ 個人の感想であり、効果・効能を保証するものではありません。結果には個人差があります。</p>
+</div>
+
+<!-- ══════════════════════
+  SECTION 8: FEATURES
+══════════════════════ -->
+<section class="section features-section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-eyebrow">選ばれる理由</span>
+      <h2 class="section-title">スリムビューティ朝霞台が<br><em>選ばれる4つの理由</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-item reveal">
+        <div class="feature-icon">👂</div>
+        <div class="feature-title">痛みなし・副作用なし</div>
+        <div class="feature-desc">金粒を貼るだけ。施術中も痛みなし。日常生活そのまま続けられます</div>
+      </div>
+      <div class="feature-item reveal">
+        <div class="feature-icon">🏃</div>
+        <div class="feature-title">運動・制限なし</div>
+        <div class="feature-desc">辛い運動も食事制限も不要。体の仕組みから変えるアプローチです</div>
+      </div>
+      <div class="feature-item reveal">
+        <div class="feature-icon">📱</div>
+        <div class="feature-title">LINEで毎日サポート</div>
+        <div class="feature-desc">食事内容をLINEで相談できるので、忙しい方でも安心して続けられます</div>
+      </div>
+      <div class="feature-item reveal">
+        <div class="feature-icon">👩‍⚕️</div>
+        <div class="feature-title">国家資格保有者が施術</div>
+        <div class="feature-desc">柔道整復師・健康管理士など専門資格を持つスタッフが対応します</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════
+  SECTION 9: GIFT（LINE特典）
+══════════════════════ -->
+<section class="section gift-section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <span class="gift-badge">期間限定 無料特典</span>
+      <h2 class="section-title">LINE登録で<br><em>3つの特典を無料</em>でお届け</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="gift-cards">
+      <div class="gift-card reveal">
+        <div class="gift-num">1</div>
+        <div class="gift-body">
+          <h4>あなたの体質診断シート</h4>
+          <p>10項目の簡単チェックで、あなたに最適なプランが分かります</p>
+          <div class="gift-price">通常 3,980円相当</div>
+        </div>
+      </div>
+      <div class="gift-card reveal">
+        <div class="gift-num">2</div>
+        <div class="gift-body">
+          <h4>50代のための整え食材リスト</h4>
+          <p>体質改善に効く食材50選。スーパーで手に入るものだけ厳選</p>
+          <div class="gift-price">通常 2,480円相当</div>
+        </div>
+      </div>
+      <div class="gift-card reveal">
+        <div class="gift-num">3</div>
+        <div class="gift-body">
+          <h4>耳ツボセルフケア動画</h4>
+          <p>自宅でできる耳ツボマッサージを動画で解説。食欲コントロールに効くポイントを紹介</p>
+          <div class="gift-price">通常 1,980円相当</div>
+        </div>
+      </div>
+    </div>
+    <div class="gift-total reveal">
+      <div style="font-size:12px;color:var(--text-soft);margin-bottom:6px;">3つの特典 合計</div>
+      <div class="gift-total-val">8,440円<span style="font-size:16px;">相当が</span></div>
+      <div style="font-size:22px;font-weight:900;color:var(--pink);margin-top:4px;">LINE登録だけで無料！</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════
+  SECTION 10: STAFF
+══════════════════════ -->
+<section class="section staff-section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-eyebrow">専門家紹介</span>
+      <h2 class="section-title">あなたをサポートする<br><em>2人の専門家</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="staff-cards">
+      <div class="staff-card reveal">
+        <div class="staff-avatar">毅</div>
+        <div class="staff-info">
+          <h3>古川 タケシ</h3>
+          <div class="role">院長</div>
+          <div class="staff-tags">
+            <span class="staff-tag">柔道整復師（国家資格）</span>
+            <span class="staff-tag">カイロプラクター</span>
+            <span class="staff-tag">指導歴10年</span>
+            <span class="staff-tag">600名以上サポート</span>
+          </div>
+        </div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="staff-avatar" style="background:#F9C0CB;color:#8B1A34;">充</div>
+        <div class="staff-info">
+          <h3>古川 充子</h3>
+          <div class="role">女性担当</div>
+          <div class="staff-tags">
+            <span class="staff-tag">健康管理士一般指導員</span>
+            <span class="staff-tag">健康管理能力検定1級</span>
+            <span class="staff-tag">指導歴10年</span>
+            <span class="staff-tag">女性専門</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════
+  SECTION 11: FINAL CTA
+══════════════════════ -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2 class="final-cta-title reveal">
+      「何をすれば変われるのか」<br>
+      その答えを<em>今すぐ</em>受け取ってください
+    </h2>
+    <p class="final-cta-sub reveal">
+      耳ツボ×骨格矯正×栄養指導で<br>
+      あなたの体質を内側から変える第一歩。<br>
+      まずは無料カウンセリングからどうぞ。
+    </p>
+
+    <div class="final-cta-box reveal">
+      <div class="urgency">本日限定：先着30名様まで</div>
+      <a href="https://line.me/R/ti/p/%40YOUR_LINE_ID" class="btn-line" style="font-size:17px;padding:20px 24px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.7 1.28 5.12 3.31 6.79L4.5 21.5l3.9-1.95C9.53 19.83 10.74 20 12 20c5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
+        無料カウンセリングを予約する
+      </a>
+      <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:12px;">
+        <span style="font-size:11px;color:var(--text-soft);">✓ 10秒で登録完了</span>
+        <span style="font-size:11px;color:var(--text-soft);">✓ 個人情報の入力不要</span>
+        <span style="font-size:11px;color:var(--text-soft);">✓ いつでもブロック可</span>
+      </div>
+    </div>
+
+    <div class="access-info reveal">
+      <strong>タケシフルカワ整骨院</strong><br>
+      埼玉県朝霞市 朝霞台駅南口 徒歩1分<br>
+      完全予約制 ／ 女性スタッフ対応可<br>
+      <br>
+      お電話でのご予約・お問い合わせ<br>
+      <a href="tel:0XXXXXXXXXX" class="tel-num">0XX-XXXX-XXXX</a>
+      受付時間 9:00〜19:30（木・日・祝休み）
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-  <p class="footer-logo">スリムビューティー朝霞台</p>
-  <p class="footer-text">タケシフルカワ整骨院｜埼玉県朝霞市</p>
+  <p>タケシフルカワ整骨院 ／ 埼玉県朝霞市 朝霞台駅南口徒歩1分<br>
+  院長：古川タケシ（柔道整復師）<br>
+  ※ 本ページの内容は個人の体験談や一般的な健康情報に基づくものであり、特定の効果を保証するものではありません。<br>
+  ※ 体調に不安がある方は医師にご相談ください。<br>
+  © 2024 スリムビューティ朝霞台 All Rights Reserved.</p>
 </footer>
 
-<!-- STICKY LINE BUTTON -->
-<div class="sticky-line">
-  <a href=”https://line.me/R/ti/p/@hzc8572m”>
-    <svg viewBox=”0 0 24 24” fill=”currentColor” style=”width:20px;height:20px;”><path d=”M12 2C6.48 2 2 6.02 2 11c0 2.95 1.45 5.57 3.72 7.33L5 21l2.85-.75C9.08 20.72 10.5 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z”/></svg>
-    LINE予約
-  </a>
-</div>
+<script>
+/* スクロールアニメーション */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+  });
+}, {threshold: 0.1});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* 年代別詳細オーバーレイ */
+function openDetail(age) {
+  const el = document.getElementById('detail-' + age);
+  el.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  el.scrollTop = 0;
+}
+function closeDetail() {
+  document.querySelectorAll('.age-detail').forEach(el => el.classList.remove('open'));
+  document.body.style.overflow = '';
+}
+</script>
 
 </body>
 </html>

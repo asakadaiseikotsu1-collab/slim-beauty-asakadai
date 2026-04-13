@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50代の体の変化の記録｜スリムビューティ朝霞台</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#FFF9F0;color:#1A1510;font-family:'Noto Sans JP',sans-serif;overflow-x:hidden;}
+img{max-width:100%;height:auto;display:block;}
+.header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:2px solid #EEE0CC;padding:12px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.back-btn{background:#FFF9F0;border:1.5px solid #EEE0CC;color:#666;font-size:12px;font-weight:700;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans JP',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all .2s;}
+.back-btn:hover{background:#EEE0CC;color:#1A1510;}
+.header-label{font-size:13px;font-weight:700;}
+.detail-hero{padding:32px 16px 24px;text-align:center;max-width:560px;margin:0 auto;}
+.detail-eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.15em;margin-bottom:14px;padding:5px 16px;border-radius:20px;background:#FEF8E0;color:#D4A017;border:1.5px solid #F5C842;}
+.detail-hero-title{font-family:'Shippori Mincho',serif;font-size:clamp(19px,5vw,24px);font-weight:800;line-height:1.55;margin-bottom:8px;}
+.detail-hero-sub{font-size:12px;color:#666;line-height:1.85;}
+.detail-cases{max-width:560px;margin:0 auto;padding:0 16px 48px;display:flex;flex-direction:column;gap:16px;}
+.d-case{background:#fff;border-radius:10px;border:1.5px solid #EEE0CC;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.08);}
+.d-case-head{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1.5px solid #EEE0CC;}
+.d-case-num{font-size:10px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:.1em;background:#FEF8E0;color:#D4A017;border:1px solid #F5C842;}
+.d-case-profile{font-size:12px;color:#666;}
+.d-case-period{font-size:10px;background:#FFF9F0;border:1px solid #EEE0CC;color:#666;padding:3px 10px;border-radius:20px;}
+/* ── BA写真エリア ── */
+.ba-photo-row{display:flex;align-items:center;justify-content:center;gap:10px;padding:20px 16px 14px;background:#FFF9F0;}
+.ba-photo-col{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;max-width:140px;position:relative;}
+.ba-photo{width:100%;height:160px;object-fit:cover;border-radius:8px;display:block;}
+.ba-photo-placeholder{display:none;width:100%;height:160px;background:#eee;border-radius:8px;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:2px dashed #ccc;}
+.ba-photo-placeholder div:first-child{font-size:28px;}
+.ba-photo-placeholder div:nth-child(2){font-size:11px;color:#888;font-weight:700;}
+.ba-photo-hint{font-size:9px;color:#aaa;}
+.ba-photo-label{display:inline-block;font-size:9px;font-weight:700;padding:3px 14px;border-radius:20px;letter-spacing:.12em;}
+.ba-before{background:#eee;color:#999;}
+.ba-after{background:#FEF8E0;color:#D4A017;border:1px solid #F5C842;}
+.ba-photo-arrow{font-size:24px;color:#E8527A;font-weight:900;flex-shrink:0;}
+/* 数値・変化 */
+.d-nums{display:grid;grid-template-columns:1fr 1fr 1fr;padding:14px 16px;gap:8px;border-bottom:1.5px solid #EEE0CC;}
+.d-num-box{text-align:center;background:#FFF9F0;border-radius:8px;padding:10px 4px;}
+.d-num-label{font-size:9px;color:#666;margin-bottom:3px;}
+.d-num-val{font-family:'Shippori Mincho',serif;font-size:18px;font-weight:800;line-height:1;}
+.d-num-box.main .d-num-val{font-size:24px;color:#E8527A;}
+.d-num-unit{font-size:10px;font-weight:400;color:#666;}
+.d-changes{padding:12px 16px;border-bottom:1.5px solid #EEE0CC;display:flex;flex-direction:column;gap:8px;}
+.d-change{display:flex;align-items:flex-start;gap:8px;font-size:12px;line-height:1.75;}
+.d-chk{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700;flex-shrink:0;margin-top:1px;background:#D4A017;}
+.d-voice{padding:14px 16px 18px;background:#FFF9F0;}
+.d-voice-inner{background:#fff;border-radius:8px;padding:14px 16px;position:relative;}
+.d-voice-inner::before{content:'❝';position:absolute;top:6px;left:10px;font-size:26px;color:#EEE0CC;line-height:1;}
+.d-voice-text{font-size:12px;line-height:1.85;padding-left:18px;padding-top:4px;font-style:italic;}
+.d-voice-name{margin-top:8px;font-size:10px;color:#666;text-align:right;font-style:normal;}
+/* CTA */
+.detail-cta-wrap{max-width:560px;margin:0 auto;padding:0 16px 48px;}
+.detail-cta-box{background:#fff;border-radius:16px;border:2px solid #EEE0CC;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);}
+.detail-cta-inner{padding:24px 20px 20px;text-align:center;}
+.detail-cta-title{font-family:'Shippori Mincho',serif;font-size:clamp(18px,4.5vw,22px);font-weight:800;line-height:1.55;margin-bottom:8px;}
+.detail-cta-sub{font-size:12px;color:#666;line-height:1.85;margin-bottom:16px;}
+.no-sales{display:inline-flex;align-items:center;gap:6px;background:#F0FAF4;border:1.5px solid #8ECFB0;color:#2E9E6B;font-size:11px;font-weight:700;padding:6px 16px;border-radius:20px;margin-bottom:16px;}
+.btn-line{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:#06C755;color:#fff;font-size:16px;font-weight:700;padding:18px 24px;border:none;border-radius:10px;cursor:pointer;letter-spacing:.06em;text-decoration:none;transition:transform .2s,box-shadow .2s;font-family:'Noto Sans JP',sans-serif;}
+.btn-line:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(6,199,85,.35);}
+.cta-notes{padding:12px 20px 16px;border-top:1.5px solid #EEE0CC;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;background:#FFF9F0;}
+.cta-note-item{font-size:11px;color:#666;display:flex;align-items:center;gap:4px;}
+.cta-note-item::before{content:'✓';color:#06C755;font-weight:700;}
+.disclaimer{text-align:center;font-size:10px;color:#ccc;line-height:2;padding:0 16px 40px;max-width:560px;margin:0 auto;}
+footer{background:#1A1510;color:rgba(255,255,255,.4);padding:20px 16px;text-align:center;font-size:10px;line-height:2;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="./index.html" class="back-btn">← LPに戻る</a>
+  <span class="header-label" style="color:#D4A017;">🌟 50代の変化の記録</span>
+</div>
+
+<div class="detail-hero">
+  <div class="detail-eyebrow">🌟 50代 CHANGE RECORD</div>
+  <h1 class="detail-hero-title">「何をやっても変わらない」<br>そう思っていた50代の方たちが<br>変わった記録です</h1>
+  <p class="detail-hero-sub">更年期・代謝低下・骨盤の歪み<br>体の仕組みから整えた結果です</p>
+</div>
+
+<div class="detail-cases">
+
+    <div class="d-case">
+      <div class="d-case-head">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="d-case-num">CASE 01</span>
+          <span class="d-case-profile">M.K様・54歳・朝霞市</span>
+        </div>
+        <span class="d-case-period">3ヶ月</span>
+      </div>
+      <!-- ▼ ビフォーアフター写真エリア（./images/ba-50-1-before.jpg / after.jpg に置いてください） -->
+      <div class="ba-photo-row">
+        <div class="ba-photo-col">
+          <img src="./images/ba-50-1-before.jpg" alt="ビフォー" class="ba-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ba-photo-placeholder">
+            <div>📷</div>
+            <div>BEFORE写真</div>
+            <div class="ba-photo-hint">ba-50-1-before.jpg</div>
+          </div>
+          <span class="ba-photo-label ba-before">BEFORE</span>
+        </div>
+        <div class="ba-photo-arrow">→</div>
+        <div class="ba-photo-col">
+          <img src="./images/ba-50-1-after.jpg" alt="アフター" class="ba-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ba-photo-placeholder" style="background:#FEF8E0;">
+            <div>📷</div>
+            <div>AFTER写真</div>
+            <div class="ba-photo-hint">ba-50-1-after.jpg</div>
+          </div>
+          <span class="ba-photo-label ba-after">AFTER</span>
+        </div>
+      </div>
+      <div class="d-nums">
+        <div class="d-num-box"><div class="d-num-label">ウエスト</div><div class="d-num-val" style="color:#D4A017;">−8.2cm</div></div>
+        <div class="d-num-box main"><div class="d-num-label">体重変化</div><div class="d-num-val">−5.8kg</div></div>
+        <div class="d-num-box"><div class="d-num-label">体脂肪</div><div class="d-num-val" style="color:#D4A017;">−4.1%</div></div>
+      </div>
+      <div class="d-changes"><div class="d-change"><div class="d-chk">✓</div>3週目から朝のむくみが消え、顔のラインがシャープになった</div><div class="d-change"><div class="d-chk">✓</div>耳ツボ施術後から食欲が自然とコントロールできるようになった</div><div class="d-change"><div class="d-chk">✓</div>姿勢が改善し、同年代から「若くなった？」と言われた</div></div>
+      <div class="d-voice"><div class="d-voice-inner"><p class="d-voice-text">子育てが落ち着いて自分の体を見直したかった。まさか50代でこんなに変化があるとは。体の仕組みから変えてもらった感覚です</p><p class="d-voice-name">M.K様・54歳・朝霞市</p></div></div>
+    </div>
+
+    <div class="d-case">
+      <div class="d-case-head">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="d-case-num">CASE 02</span>
+          <span class="d-case-profile">Y.T様・57歳・新座市</span>
+        </div>
+        <span class="d-case-period">2ヶ月</span>
+      </div>
+      <!-- ▼ ビフォーアフター写真エリア（./images/ba-50-2-before.jpg / after.jpg に置いてください） -->
+      <div class="ba-photo-row">
+        <div class="ba-photo-col">
+          <img src="./images/ba-50-2-before.jpg" alt="ビフォー" class="ba-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ba-photo-placeholder">
+            <div>📷</div>
+            <div>BEFORE写真</div>
+            <div class="ba-photo-hint">ba-50-2-before.jpg</div>
+          </div>
+          <span class="ba-photo-label ba-before">BEFORE</span>
+        </div>
+        <div class="ba-photo-arrow">→</div>
+        <div class="ba-photo-col">
+          <img src="./images/ba-50-2-after.jpg" alt="アフター" class="ba-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ba-photo-placeholder" style="background:#FEF8E0;">
+            <div>📷</div>
+            <div>AFTER写真</div>
+            <div class="ba-photo-hint">ba-50-2-after.jpg</div>
+          </div>
+          <span class="ba-photo-label ba-after">AFTER</span>
+        </div>
+      </div>
+      <div class="d-nums">
+        <div class="d-num-box"><div class="d-num-label">ウエスト</div><div class="d-num-val" style="color:#D4A017;">−6.5cm</div></div>
+        <div class="d-num-box main"><div class="d-num-label">体重変化</div><div class="d-num-val">−4.2kg</div></div>
+        <div class="d-num-box"><div class="d-num-label">体脂肪</div><div class="d-num-val" style="color:#D4A017;">−3.3%</div></div>
+      </div>
+      <div class="d-changes"><div class="d-change"><div class="d-chk">✓</div>更年期の代謝低下が原因と判明。体質に合った栄養指導で改善</div><div class="d-change"><div class="d-chk">✓</div>骨格の歪みを整えることで血流が改善し冷えが緩和された</div><div class="d-change"><div class="d-chk">✓</div>リバウンドなし。終了から半年後も体型をキープ中</div></div>
+      <div class="d-voice"><div class="d-voice-inner"><p class="d-voice-text">更年期で代謝が落ちてからずっと悩んでいました。ここは体の原因から見てくれるから違う。数字より体の軽さが全然違います</p><p class="d-voice-name">Y.T様・57歳・新座市</p></div></div>
+    </div>
+
+</div>
+
+<div class="detail-cta-wrap">
+  <div class="detail-cta-box">
+    <div class="detail-cta-inner">
+      <h2 class="detail-cta-title">50代からでも<br><span style="color:#E8527A;">体は必ず変わります</span></h2>
+      <p class="detail-cta-sub">まずは無料のカウンセリングから。<br>カウンセリング・体質診断は完全無料です。</p>
+      <div class="no-sales">✓ しつこい営業・勧誘は一切しません</div>
+      <a href="https://line.me/R/ti/p/%40YOUR_LINE_ID" class="btn-line">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.7 1.28 5.12 3.31 6.79L4.5 21.5l3.9-1.95C9.53 19.83 10.74 20 12 20c5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
+        LINEで無料カウンセリングを予約する
+      </a>
+    </div>
+    <div class="cta-notes">
+      <span class="cta-note-item">10秒で登録完了</span>
+      <span class="cta-note-item">個人情報不要</span>
+      <span class="cta-note-item">いつでもブロック可</span>
+    </div>
+  </div>
+</div>
+
+<p class="disclaimer">※ 掲載の体験談は個人の感想であり、効果・効能を保証するものではありません。結果には個人差があります。</p>
+
+<footer>タケシフルカワ整骨院 ／ 埼玉県朝霞市 朝霞台駅南口徒歩1分<br>© 2024 スリムビューティ朝霞台 All Rights Reserved.</footer>
+
+</body>
+</html>

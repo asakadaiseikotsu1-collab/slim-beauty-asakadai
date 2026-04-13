@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>無料カウンセリング予約フォーム｜スリムビューティ朝霞台</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:#FFF9F0;
+  color:#1A1510;
+  font-family:'Noto Sans JP',sans-serif;
+  overflow-x:hidden;
+  line-height:1.7;
+}
+
+:root{
+  --pink:#E8527A;
+  --pink-light:#FFE8EE;
+  --orange:#D4380D;
+  --gold:#D4A017;
+  --gold2:#F5C842;
+  --gold-pale:#FEF8E0;
+  --green:#2E9E6B;
+  --bg:#FFF9F0;
+  --white:#FFFFFF;
+  --text:#1A1510;
+  --muted:#666666;
+  --border:#EEE0CC;
+  --focus:#D4A017;
+  --r:10px;
+  --err:#D63A3A;
+}
+
+.wrap{max-width:520px;margin:0 auto;padding:0 16px;}
+
+/* ── HEADER ── */
+.header{
+  background:var(--white);
+  border-bottom:2px solid var(--border);
+  padding:12px 16px;
+  display:flex;align-items:center;gap:12px;
+  position:sticky;top:0;z-index:50;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.back-btn{
+  background:var(--bg);border:1.5px solid var(--border);
+  color:var(--muted);font-size:12px;font-weight:700;
+  padding:7px 14px;border-radius:20px;cursor:pointer;
+  font-family:'Noto Sans JP',sans-serif;
+  text-decoration:none;display:inline-flex;
+  align-items:center;gap:5px;transition:all .2s;
+}
+.back-btn:hover{background:var(--border);color:var(--text);}
+.header-title{font-size:13px;font-weight:700;color:var(--orange);}
+
+/* ── PROGRESS ── */
+.progress-wrap{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  padding:10px 16px;
+}
+.progress-inner{
+  max-width:520px;margin:0 auto;
+  display:flex;align-items:center;gap:10px;
+}
+.progress-label{font-size:10px;color:var(--muted);white-space:nowrap;}
+.progress-bg{
+  flex:1;height:4px;background:var(--border);
+  border-radius:2px;overflow:hidden;
+}
+.progress-fill{
+  height:100%;background:linear-gradient(to right,var(--orange),var(--gold2));
+  border-radius:2px;transition:width .4s ease;
+  width:0%;
+}
+.progress-step{font-size:10px;color:var(--orange);font-weight:700;white-space:nowrap;}
+
+/* ── HERO ── */
+.form-hero{
+  background:linear-gradient(160deg,#FFF5E0 0%,#FFFAF5 60%,#FFF0F5 100%);
+  padding:32px 16px 28px;text-align:center;
+  border-bottom:3px solid var(--gold2);
+}
+.form-hero-badge{
+  display:inline-block;
+  background:var(--white);border:2px solid var(--gold2);
+  color:var(--gold);font-size:11px;font-weight:700;
+  padding:5px 16px;border-radius:20px;margin-bottom:14px;
+}
+.form-hero-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(20px,5.5vw,26px);font-weight:800;
+  line-height:1.5;margin-bottom:8px;
+}
+.form-hero-title em{font-style:normal;color:var(--orange);}
+.form-hero-sub{font-size:13px;color:var(--muted);line-height:1.85;}
+
+/* ── REASSURANCE STRIP ── */
+.reassure-strip{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  padding:12px 16px;
+}
+.reassure-inner{
+  max-width:520px;margin:0 auto;
+  display:flex;justify-content:center;gap:20px;flex-wrap:wrap;
+}
+.reassure-item{
+  display:flex;align-items:center;gap:5px;
+  font-size:11px;color:var(--muted);font-weight:500;
+}
+.reassure-item::before{content:'✓';color:var(--green);font-weight:700;}
+
+/* ── FORM WRAPPER ── */
+.form-section{padding:32px 16px 48px;}
+
+.form-card{
+  background:var(--white);border-radius:var(--r);
+  border:1.5px solid var(--border);
+  overflow:hidden;
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
+  margin-bottom:16px;
+}
+.form-card-header{
+  background:var(--bg);
+  border-bottom:1.5px solid var(--border);
+  padding:14px 18px;
+  display:flex;align-items:center;gap:10px;
+}
+.form-card-icon{
+  width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;
+}
+.form-card-title{font-size:14px;font-weight:700;}
+.form-card-body{padding:20px 18px;}
+
+/* ── FIELDS ── */
+.field{margin-bottom:20px;}
+.field:last-child{margin-bottom:0;}
+
+.field-label{
+  display:flex;align-items:center;gap:6px;
+  font-size:13px;font-weight:700;
+  margin-bottom:8px;color:var(--text);
+}
+.required-badge{
+  background:var(--pink);color:#fff;
+  font-size:9px;font-weight:700;
+  padding:2px 7px;border-radius:10px;
+  letter-spacing:.05em;
+}
+.optional-badge{
+  background:var(--border);color:var(--muted);
+  font-size:9px;font-weight:700;
+  padding:2px 7px;border-radius:10px;
+}
+.field-hint{
+  font-size:11px;color:var(--muted);
+  margin-bottom:6px;line-height:1.6;
+}
+
+/* input / select / textarea */
+.f-input, .f-select, .f-textarea{
+  width:100%;
+  background:var(--bg);
+  border:1.5px solid var(--border);
+  border-radius:8px;
+  padding:13px 14px;
+  font-size:15px;
+  font-family:'Noto Sans JP',sans-serif;
+  color:var(--text);
+  transition:border-color .2s,box-shadow .2s;
+  -webkit-appearance:none;
+  appearance:none;
+}
+.f-input:focus, .f-select:focus, .f-textarea:focus{
+  outline:none;
+  border-color:var(--focus);
+  box-shadow:0 0 0 3px rgba(212,160,23,.15);
+  background:var(--white);
+}
+.f-input.error, .f-select.error, .f-textarea.error{
+  border-color:var(--err);
+  box-shadow:0 0 0 3px rgba(214,58,58,.1);
+}
+.f-input::placeholder, .f-textarea::placeholder{color:#BBB;}
+
+/* 生年月日 3分割 */
+.dob-row{
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  gap:8px;
+}
+.dob-unit{
+  display:flex;align-items:center;gap:6px;
+}
+.dob-unit .f-select{flex:1;}
+.dob-label{font-size:12px;color:var(--muted);white-space:nowrap;}
+
+/* 希望日時 2列 */
+.datetime-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+
+/* チェックボックスグループ */
+.check-group{display:flex;flex-direction:column;gap:8px;}
+.check-item{
+  display:flex;align-items:center;gap:10px;
+  background:var(--bg);border:1.5px solid var(--border);
+  border-radius:8px;padding:12px 14px;cursor:pointer;
+  transition:border-color .2s,background .2s;
+  font-size:13px;
+}
+.check-item:hover{border-color:var(--gold2);}
+.check-item input[type="checkbox"]{
+  width:18px;height:18px;flex-shrink:0;
+  accent-color:var(--orange);cursor:pointer;
+}
+.check-item.checked{
+  border-color:var(--orange);
+  background:#FFEEE8;
+}
+
+/* ラジオグループ */
+.radio-group{display:flex;flex-direction:column;gap:8px;}
+.radio-item{
+  display:flex;align-items:center;gap:10px;
+  background:var(--bg);border:1.5px solid var(--border);
+  border-radius:8px;padding:12px 14px;cursor:pointer;
+  transition:border-color .2s,background .2s;
+  font-size:13px;
+}
+.radio-item:hover{border-color:var(--gold2);}
+.radio-item input[type="radio"]{
+  width:18px;height:18px;flex-shrink:0;
+  accent-color:var(--orange);cursor:pointer;
+}
+.radio-item.checked{border-color:var(--orange);background:#FFEEE8;}
+
+/* エラーメッセージ */
+.err-msg{
+  display:none;
+  color:var(--err);font-size:11px;
+  margin-top:5px;
+  display:flex;align-items:center;gap:4px;
+}
+.err-msg::before{content:'⚠';font-size:11px;}
+.err-msg.show{display:flex;}
+
+/* ── 送信ボタン ── */
+.submit-section{
+  padding:0 16px 48px;
+  text-align:center;
+}
+.privacy-check{
+  display:flex;align-items:flex-start;gap:10px;
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:var(--r);padding:14px 16px;
+  margin-bottom:16px;text-align:left;
+  cursor:pointer;
+}
+.privacy-check input{
+  width:18px;height:18px;flex-shrink:0;
+  margin-top:2px;accent-color:var(--orange);cursor:pointer;
+}
+.privacy-text{font-size:12px;color:var(--muted);line-height:1.75;}
+.privacy-text a{color:var(--orange);text-decoration:underline;}
+
+.btn-submit{
+  width:100%;max-width:400px;
+  background:linear-gradient(135deg,var(--orange) 0%,#FF6030 100%);
+  color:#fff;font-size:17px;font-weight:700;
+  padding:20px 24px;border:none;border-radius:var(--r);
+  cursor:pointer;letter-spacing:.06em;
+  font-family:'Noto Sans JP',sans-serif;
+  transition:transform .2s,box-shadow .2s,opacity .2s;
+  display:flex;align-items:center;justify-content:center;
+  gap:8px;margin:0 auto;
+}
+.btn-submit:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(212,56,13,.35);
+}
+.btn-submit:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+.submit-note{
+  margin-top:10px;font-size:11px;color:var(--muted);line-height:1.8;
+}
+
+/* ── 送信完了画面 ── */
+.complete-screen{
+  display:none;
+  padding:60px 16px;text-align:center;
+  max-width:520px;margin:0 auto;
+}
+.complete-screen.show{display:block;}
+.complete-icon{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,var(--orange),var(--gold2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:32px;margin:0 auto 24px;
+  animation:popIn .5s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes popIn{
+  from{transform:scale(0);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+.complete-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(20px,5.5vw,26px);font-weight:800;
+  line-height:1.5;margin-bottom:10px;
+}
+.complete-title em{font-style:normal;color:var(--orange);}
+.complete-sub{font-size:13px;color:var(--muted);line-height:1.9;margin-bottom:28px;}
+.complete-card{
+  background:var(--white);border-radius:var(--r);
+  border:1.5px solid var(--border);
+  padding:18px 20px;text-align:left;margin-bottom:20px;
+}
+.complete-card-title{
+  font-size:12px;font-weight:700;color:var(--orange);
+  margin-bottom:10px;letter-spacing:.05em;
+}
+.complete-item{
+  display:flex;align-items:flex-start;gap:8px;
+  font-size:12px;line-height:1.75;color:var(--text);
+  margin-bottom:8px;
+}
+.complete-item::before{
+  content:'✓';color:var(--green);
+  font-weight:700;flex-shrink:0;margin-top:1px;
+}
+.btn-back-top{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--bg);border:1.5px solid var(--border);
+  color:var(--text);font-size:13px;font-weight:700;
+  padding:12px 24px;border-radius:var(--r);
+  text-decoration:none;transition:all .2s;
+}
+.btn-back-top:hover{border-color:var(--gold2);}
+
+footer{
+  background:var(--text);color:rgba(255,255,255,.4);
+  padding:20px 16px;text-align:center;
+  font-size:10px;line-height:2;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <a href="./counseling.html" class="back-btn">← 戻る</a>
+  <span class="header-title">📅 無料カウンセリング予約</span>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-wrap">
+  <div class="progress-inner">
+    <span class="progress-label">入力状況</span>
+    <div class="progress-bg">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <span class="progress-step" id="progressStep">0%</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="form-hero">
+  <div class="form-hero-badge">初回カウンセリング 完全無料</div>
+  <h1 class="form-hero-title">
+    ご予約情報を<br>
+    <em>ご入力ください</em>
+  </h1>
+  <p class="form-hero-sub">
+    入力後に確認メールをお送りします<br>
+    所要時間：約2〜3分
+  </p>
+</div>
+
+<!-- REASSURANCE -->
+<div class="reassure-strip">
+  <div class="reassure-inner">
+    <span class="reassure-item">個人情報は厳重に管理</span>
+    <span class="reassure-item">当日の契約・押しつけなし</span>
+    <span class="reassure-item">キャンセル無料</span>
+  </div>
+</div>
+
+<!-- ══════════════════
+  FORM
+══════════════════ -->
+<div id="formArea">
+<section class="form-section">
+  <div class="wrap">
+
+    <!-- ① お客様情報 -->
+    <div class="form-card">
+      <div class="form-card-header">
+        <div class="form-card-icon" style="background:#FEF8E0;">👤</div>
+        <div class="form-card-title">お客様情報</div>
+      </div>
+      <div class="form-card-body">
+
+        <!-- お名前 -->
+        <div class="field">
+          <div class="field-label">
+            お名前
+            <span class="required-badge">必須</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div>
+              <input type="text" class="f-input" id="lastName" placeholder="山田" autocomplete="family-name">
+              <div class="err-msg" id="lastNameErr">姓を入力してください</div>
+            </div>
+            <div>
+              <input type="text" class="f-input" id="firstName" placeholder="花子" autocomplete="given-name">
+              <div class="err-msg" id="firstNameErr">名を入力してください</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;">
+            <input type="text" class="f-input" id="lastNameKana" placeholder="ヤマダ（カナ）" style="font-size:13px;">
+            <input type="text" class="f-input" id="firstNameKana" placeholder="ハナコ（カナ）" style="font-size:13px;">
+          </div>
+        </div>
+
+        <!-- 生年月日 -->
+        <div class="field">
+          <div class="field-label">
+            生年月日
+            <span class="required-badge">必須</span>
+          </div>
+          <p class="field-hint">年齢に合わせた最適なプログラムをご提案するために使用します</p>
+          <div class="dob-row">
+            <div class="dob-unit">
+              <select class="f-select" id="dobYear">
+                <option value="">年</option>
+              </select>
+              <span class="dob-label">年</span>
+            </div>
+            <div class="dob-unit">
+              <select class="f-select" id="dobMonth">
+                <option value="">月</option>
+                <option>1</option><option>2</option><option>3</option>
+                <option>4</option><option>5</option><option>6</option>
+                <option>7</option><option>8</option><option>9</option>
+                <option>10</option><option>11</option><option>12</option>
+              </select>
+              <span class="dob-label">月</span>
+            </div>
+            <div class="dob-unit">
+              <select class="f-select" id="dobDay">
+                <option value="">日</option>
+              </select>
+              <span class="dob-label">日</span>
+            </div>
+          </div>
+          <div class="err-msg" id="dobErr">生年月日を選択してください</div>
+        </div>
+
+        <!-- メールアドレス -->
+        <div class="field">
+          <div class="field-label">
+            メールアドレス
+            <span class="required-badge">必須</span>
+          </div>
+          <p class="field-hint">予約確認メールをお送りします</p>
+          <input type="email" class="f-input" id="email" placeholder="example@email.com" autocomplete="email">
+          <div class="err-msg" id="emailErr">正しいメールアドレスを入力してください</div>
+          <input type="email" class="f-input" id="emailConfirm" placeholder="メールアドレス（確認）" style="margin-top:8px;" autocomplete="email">
+          <div class="err-msg" id="emailConfirmErr">メールアドレスが一致しません</div>
+        </div>
+
+        <!-- 電話番号 -->
+        <div class="field">
+          <div class="field-label">
+            電話番号
+            <span class="required-badge">必須</span>
+          </div>
+          <p class="field-hint">ご確認のご連絡をする場合があります</p>
+          <input type="tel" class="f-input" id="tel" placeholder="090-0000-0000" autocomplete="tel">
+          <div class="err-msg" id="telErr">電話番号を入力してください</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ② 希望日時 -->
+    <div class="form-card">
+      <div class="form-card-header">
+        <div class="form-card-icon" style="background:#FFEEE8;">📅</div>
+        <div class="form-card-title">ご希望の日時</div>
+      </div>
+      <div class="form-card-body">
+
+        <div class="field">
+          <div class="field-label">
+            第1希望
+            <span class="required-badge">必須</span>
+          </div>
+          <div class="datetime-row">
+            <input type="date" class="f-input" id="date1" min="">
+            <select class="f-select" id="time1">
+              <option value="">時間帯を選択</option>
+              <option>9:00〜10:00</option>
+              <option>10:00〜11:00</option>
+              <option>11:00〜12:00</option>
+              <option>13:00〜14:00</option>
+              <option>14:00〜15:00</option>
+              <option>15:00〜16:00</option>
+              <option>16:00〜17:00</option>
+              <option>17:00〜18:00</option>
+              <option>18:00〜19:00</option>
+              <option>19:00〜19:30</option>
+            </select>
+          </div>
+          <div class="err-msg" id="date1Err">第1希望の日時を選択してください</div>
+        </div>
+
+        <div class="field">
+          <div class="field-label">
+            第2希望
+            <span class="optional-badge">任意</span>
+          </div>
+          <div class="datetime-row">
+            <input type="date" class="f-input" id="date2" min="">
+            <select class="f-select" id="time2">
+              <option value="">時間帯を選択</option>
+              <option>9:00〜10:00</option>
+              <option>10:00〜11:00</option>
+              <option>11:00〜12:00</option>
+              <option>13:00〜14:00</option>
+              <option>14:00〜15:00</option>
+              <option>15:00〜16:00</option>
+              <option>16:00〜17:00</option>
+              <option>17:00〜18:00</option>
+              <option>18:00〜19:00</option>
+              <option>19:00〜19:30</option>
+            </select>
+          </div>
+        </div>
+
+        <p style="font-size:11px;color:var(--muted);margin-top:-8px;line-height:1.7;">
+          ※ 定休日：木曜・日曜・祝日<br>
+          ※ ご予約確定後、確認メールをお送りします
+        </p>
+
+      </div>
+    </div>
+
+    <!-- ③ お悩み -->
+    <div class="form-card">
+      <div class="form-card-header">
+        <div class="form-card-icon" style="background:#F0EBFA;">💬</div>
+        <div class="form-card-title">現在のお悩み</div>
+      </div>
+      <div class="form-card-body">
+
+        <div class="field">
+          <div class="field-label">
+            気になっていること
+            <span class="required-badge">必須</span>
+          </div>
+          <p class="field-hint">当てはまるものをすべて選択してください</p>
+          <div class="check-group" id="worryGroup">
+            <label class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="worry" value="体型・ウエスト">
+              体型・ウエストまわりが気になる
+            </label>
+            <label class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="worry" value="むくみ・冷え">
+              むくみ・冷えが続いている
+            </label>
+            <label class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="worry" value="代謝低下">
+              食べていないのに体が変わってきた
+            </label>
+            <label class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="worry" value="姿勢・骨盤">
+              姿勢・骨盤の歪みが気になる
+            </label>
+            <label class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="worry" value="続かない">
+              何度試しても続かない
+            </label>
+            <label class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="worry" value="その他">
+              その他・まずは相談したい
+            </label>
+          </div>
+          <div class="err-msg" id="worryErr">1つ以上選択してください</div>
+        </div>
+
+        <div class="field">
+          <div class="field-label">
+            詳しく教えてください
+            <span class="optional-badge">任意</span>
+          </div>
+          <textarea class="f-textarea" id="worryDetail" rows="4"
+            placeholder="いつ頃から・どんな状態か・気になっていることなど、自由にお書きください"></textarea>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ④ 流入経路 -->
+    <div class="form-card">
+      <div class="form-card-header">
+        <div class="form-card-icon" style="background:#E6F7F0;">🔍</div>
+        <div class="form-card-title">どこで知りましたか？</div>
+      </div>
+      <div class="form-card-body">
+        <div class="field">
+          <div class="field-label">
+            当院を知ったきっかけ
+            <span class="required-badge">必須</span>
+          </div>
+          <div class="radio-group" id="sourceGroup">
+            <label class="radio-item" onclick="toggleRadio(this)">
+              <input type="radio" name="source" value="Instagram広告">
+              Instagram広告
+            </label>
+            <label class="radio-item" onclick="toggleRadio(this)">
+              <input type="radio" name="source" value="Instagram投稿">
+              Instagramの投稿・リール
+            </label>
+            <label class="radio-item" onclick="toggleRadio(this)">
+              <input type="radio" name="source" value="Facebook広告">
+              Facebook広告
+            </label>
+            <label class="radio-item" onclick="toggleRadio(this)">
+              <input type="radio" name="source" value="Google検索">
+              Google・Yahoo!検索
+            </label>
+            <label class="radio-item" onclick="toggleRadio(this)">
+              <input type="radio" name="source" value="LINE">
+              LINE
+            </label>
+            <label class="radio-item" onclick="toggleRadio(this)">
+              <input type="radio" name="source" value="知人紹介">
+              知人・友人の紹介
+            </label>
+            <label class="radio-item" onclick="toggleRadio(this)">
+              <input type="radio" name="source" value="チラシ・看板">
+              チラシ・看板・駅広告
+            </label>
+            <label class="radio-item" onclick="toggleRadio(this)">
+              <input type="radio" name="source" value="その他">
+              その他
+            </label>
+          </div>
+          <div class="err-msg" id="sourceErr">選択してください</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 送信 -->
+<div class="submit-section">
+  <div class="wrap">
+    <label class="privacy-check" id="privacyLabel">
+      <input type="checkbox" id="privacyCheck" onchange="updateSubmit()">
+      <span class="privacy-text">
+        <a href="#">プライバシーポリシー</a>に同意します。
+        入力いただいた個人情報は、カウンセリング予約の確認・ご連絡にのみ使用し、第三者への提供は行いません。
+      </span>
+    </label>
+
+    <button class="btn-submit" id="submitBtn" onclick="handleSubmit()" disabled>
+      <span>予約内容を送信する</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <p class="submit-note">
+      送信後、ご入力のメールアドレスに確認メールをお送りします<br>
+      ※ メールが届かない場合はLINEまたはお電話でご確認ください
+    </p>
+  </div>
+</div>
+</div><!-- /#formArea -->
+
+<!-- ══════════════════
+  送信完了画面
+══════════════════ -->
+<div class="complete-screen" id="completeScreen">
+  <div class="wrap">
+    <div class="complete-icon">✓</div>
+    <h2 class="complete-title">
+      ご予約を<br>
+      <em>受け付けました</em>
+    </h2>
+    <p class="complete-sub">
+      ご入力のメールアドレスに<br>
+      確認メールをお送りしました。<br>
+      <br>
+      担当スタッフより<strong>1営業日以内</strong>に<br>
+      ご連絡いたします。
+    </p>
+
+    <div class="complete-card">
+      <div class="complete-card-title">ご来院前のご確認</div>
+      <div class="complete-item">普段着でお越しください。お着替えは不要です</div>
+      <div class="complete-item">当日の契約・申し込みは一切不要です</div>
+      <div class="complete-item">キャンセルはLINEまたはメールにてご連絡ください</div>
+      <div class="complete-item">朝霞台駅南口より徒歩1分です</div>
+    </div>
+
+    <a href="./counseling.html" class="btn-back-top">← ページに戻る</a>
+  </div>
+</div>
+
+<footer>
+  タケシフルカワ整骨院 ／ 埼玉県朝霞市 朝霞台駅南口徒歩1分<br>
+  © 2024 スリムビューティ朝霞台 All Rights Reserved.
+</footer>
+
+<script>
+/* ── 生年月日セレクト生成 ── */
+(function(){
+  const yearSel = document.getElementById('dobYear');
+  const daySel  = document.getElementById('dobDay');
+  const now = new Date().getFullYear();
+  for(let y = now - 20; y >= now - 85; y--){
+    const o = document.createElement('option');
+    o.value = o.textContent = y;
+    yearSel.appendChild(o);
+  }
+  for(let d = 1; d <= 31; d++){
+    const o = document.createElement('option');
+    o.value = o.textContent = d;
+    daySel.appendChild(o);
+  }
+})();
+
+/* 日付の最小値を今日に設定 */
+(function(){
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('date1').min = today;
+  document.getElementById('date2').min = today;
+})();
+
+/* ── プログレスバー ── */
+const requiredIds = ['lastName','firstName','dobYear','dobMonth','dobDay','email','emailConfirm','tel','date1','time1'];
+function updateProgress(){
+  let filled = 0;
+  requiredIds.forEach(id => {
+    const el = document.getElementById(id);
+    if(el && el.value) filled++;
+  });
+  // チェックボックス・ラジオ
+  const worries = document.querySelectorAll('input[name="worry"]:checked').length;
+  const source  = document.querySelector('input[name="source"]:checked');
+  if(worries > 0) filled++;
+  if(source) filled++;
+  const total = requiredIds.length + 2;
+  const pct = Math.round((filled / total) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressStep').textContent = pct + '%';
+}
+document.querySelectorAll('.f-input,.f-select,.f-textarea').forEach(el => {
+  el.addEventListener('input', updateProgress);
+  el.addEventListener('change', updateProgress);
+});
+
+/* ── チェックボックス ── */
+function toggleCheck(label){
+  setTimeout(()=>{
+    label.classList.toggle('checked', label.querySelector('input').checked);
+    updateProgress();
+  }, 0);
+}
+
+/* ── ラジオボタン ── */
+function toggleRadio(label){
+  setTimeout(()=>{
+    document.querySelectorAll('.radio-item').forEach(l => l.classList.remove('checked'));
+    label.classList.add('checked');
+    updateProgress();
+  }, 0);
+}
+
+/* ── プライバシー同意 → ボタン活性 ── */
+function updateSubmit(){
+  document.getElementById('submitBtn').disabled =
+    !document.getElementById('privacyCheck').checked;
+}
+
+/* ── バリデーション ── */
+function showErr(id, show){
+  const el = document.getElementById(id);
+  if(el) el.classList.toggle('show', show);
+}
+function setFieldError(inputId, errId, hasError){
+  const el = document.getElementById(inputId);
+  if(el) el.classList.toggle('error', hasError);
+  showErr(errId, hasError);
+}
+
+function validate(){
+  let ok = true;
+
+  // 姓
+  const hasLast = !!document.getElementById('lastName').value.trim();
+  setFieldError('lastName','lastNameErr',!hasLast);
+  if(!hasLast) ok = false;
+
+  // 名
+  const hasFirst = !!document.getElementById('firstName').value.trim();
+  setFieldError('firstName','firstNameErr',!hasFirst);
+  if(!hasFirst) ok = false;
+
+  // 生年月日
+  const hasDob = document.getElementById('dobYear').value &&
+                 document.getElementById('dobMonth').value &&
+                 document.getElementById('dobDay').value;
+  showErr('dobErr', !hasDob);
+  if(!hasDob) ok = false;
+
+  // メール
+  const emailVal = document.getElementById('email').value.trim();
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailOk = emailRe.test(emailVal);
+  setFieldError('email','emailErr',!emailOk);
+  if(!emailOk) ok = false;
+
+  // メール確認
+  const emailConfirm = document.getElementById('emailConfirm').value.trim();
+  const confirmOk = emailVal === emailConfirm && emailOk;
+  setFieldError('emailConfirm','emailConfirmErr',!confirmOk);
+  if(!confirmOk) ok = false;
+
+  // 電話
+  const telVal = document.getElementById('tel').value.trim();
+  const telOk = /^[\d\-\+\s()]{10,}$/.test(telVal);
+  setFieldError('tel','telErr',!telOk);
+  if(!telOk) ok = false;
+
+  // 第1希望日時
+  const hasDate1 = document.getElementById('date1').value &&
+                   document.getElementById('time1').value;
+  setFieldError('date1','date1Err',!hasDate1);
+  if(!hasDate1) ok = false;
+
+  // お悩み
+  const worryOk = document.querySelectorAll('input[name="worry"]:checked').length > 0;
+  showErr('worryErr', !worryOk);
+  if(!worryOk) ok = false;
+
+  // 流入経路
+  const sourceOk = !!document.querySelector('input[name="source"]:checked');
+  showErr('sourceErr', !sourceOk);
+  if(!sourceOk) ok = false;
+
+  return ok;
+}
+
+/* ── 送信処理（FormSubmit） ── */
+function handleSubmit(){
+  if(!validate()) {
+    const firstErr = document.querySelector('.f-input.error, .f-select.error');
+    if(firstErr) firstErr.scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span>送信中...</span>';
+
+  // フォームデータを収集
+  const worries = [...document.querySelectorAll('input[name="worry"]:checked')]
+    .map(el => el.value).join('、');
+  const source = document.querySelector('input[name="source"]:checked');
+
+  const body = new FormData();
+  body.append('お名前',
+    document.getElementById('lastName').value + ' ' +
+    document.getElementById('firstName').value + '（' +
+    document.getElementById('lastNameKana').value + ' ' +
+    document.getElementById('firstNameKana').value + '）');
+  body.append('生年月日',
+    document.getElementById('dobYear').value + '年' +
+    document.getElementById('dobMonth').value + '月' +
+    document.getElementById('dobDay').value + '日');
+  body.append('メールアドレス', document.getElementById('email').value);
+  body.append('電話番号', document.getElementById('tel').value);
+  body.append('第1希望',
+    document.getElementById('date1').value + ' ' +
+    document.getElementById('time1').value);
+  body.append('第2希望',
+    document.getElementById('date2').value
+      ? document.getElementById('date2').value + ' ' + document.getElementById('time2').value
+      : 'なし');
+  body.append('お悩み', worries);
+  body.append('詳細', document.getElementById('worryDetail').value || 'なし');
+  body.append('流入経路', source ? source.value : '未選択');
+  body.append('_subject', '【予約申込】無料カウンセリング スリムビューティ朝霞台');
+  body.append('_template', 'table');
+  body.append('_captcha', 'false');
+  body.append('_next', 'https://asakadaiseikotsu1-collab.github.io/slim-beauty-asakadai/thanks.html');
+
+  fetch('https://formsubmit.co/asakadaiseikotsu1@gmail.com', {
+    method: 'POST',
+    body: body
+  })
+  .then(res => {
+    document.getElementById('formArea').style.display = 'none';
+    document.getElementById('completeScreen').classList.add('show');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  })
+  .catch(() => {
+    btn.disabled = false;
+    btn.innerHTML = '<span>予約内容を送信する</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>';
+    alert('送信に失敗しました。\nお手数ですがLINEまたはお電話でご連絡ください。');
+  });
+}
+</script>
+
+</body>
+</html>
